@@ -1,3 +1,34 @@
+<?php
+include("ConexionBD.php");
+$ObtenerBD = new ConectarBD();
+$ObtenerConexion = $ObtenerBD->conex();
+
+if (isset($_POST["CrearUsuario"])) {
+  $Nombre = $_POST["nombre"];
+  $PrimerApellido = $_POST["PrimerApellido"];
+  $SegundoApellido = $_POST["SegundoApellido"];
+  $Puesto = $_POST["Cargo"];
+  $EstadoCivil = $_POST["EstadoCivil"];
+  $Direccion = $_POST["Direccion"];
+  $Correo = $_POST["Correo"];
+  $Usuario = $_POST["Usuario"];
+  $AñoCont = $_POST["AnoContrato"];
+
+  $query = "INSERT INTO colaboradores (Nombre, `Primer Apellido`, `Segundo apellido`, Cargo, `Estado civil`, Direccion, Correo, Usuario, `Año de Contrato`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  $Sentencia = mysqli_prepare($ObtenerConexion, $query);
+  mysqli_stmt_bind_param($Sentencia, "ssssssssi", $Nombre, $PrimerApellido, $SegundoApellido, $Puesto, $EstadoCivil, $Direccion, $Correo, $Usuario, $AñoCont);
+  mysqli_stmt_execute($Sentencia);
+  $Afectado = mysqli_stmt_affected_rows($Sentencia);
+  if ($Afectado == 1) {
+      echo "<script> alert ('El colaborador $Nombre se creó correctamente'); location.href='/Proyecto%20Progra%20III/CrearUsuario.php?CrearUsuario=Crear+Usuario'; </script>";
+  } else {
+      echo "<script> alert ('ERROR: El colaborador $Nombre no se creó correctamente'); location.href='/CrearUsuario.php'; </script>";
+  }
+  mysqli_stmt_close($Sentencia);
+  mysqli_close($ObtenerConexion);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -56,8 +87,8 @@
       
         <main class="my-4 container text-center">
           <section class="row justify-content-center">
-            <h2>Empleado</h2>
-            <form class="col-md-6 col-lg-10" action="">
+            <h2>Colaborador</h2>
+            <form class="col-md-6 col-lg-10" action="" method="POST">
               <div class="mb-4">
                 <img src="img/Usuario.png" alt="Vista previa de la imagen" class="img-thumbnail"width="200" height="100">
               
@@ -66,19 +97,19 @@
                 <div class="col">
                   <div class="mb-4">
                     <label for="Nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre">
+                    <input type="text" class="form-control" id="nombre" name="nombre">
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-4">
                     <label for="PrimerApellido">Primer Apellido</label>
-                    <input type="text" class="form-control" id="PrimerApellido">
+                    <input type="text" class="form-control" id="PrimerApellido" name="PrimerApellido">
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-4">
                     <label for="SegundoApellido">Segundo Apellido</label>
-                    <input type="text" class="form-control" id="SegundoApellido">
+                    <input type="text" class="form-control" id="SegundoApellido" name="SegundoApellido">
                   </div>
                 </div>
               </div>
@@ -86,24 +117,24 @@
                 <div class="col">
                   <div class="mb-4">
                     <label for="Cargo">Cargo</label>
-                    <select id="Cargo" class="form-select">
-                      <option value="1">Auxiliar de enfermería</option>
-                      <option value="2">Enfermero</option>
-                      <option value="3">Doctor</option>
-                      <option value="4">Farmacéutico</option>
+                    <select name="Cargo" id="Cargo" class="form-select" >
+                      <option value="Auxiliar de enfermería">Auxiliar de enfermería</option>
+                      <option value="Enfermero">Enfermero</option>
+                      <option value="Doctor">Doctor</option>
+                      <option value="Farmacéutico">Farmacéutico</option>
                     </select>
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-4">
                     <label for="EstadoCivil">Estado Civil</label>
-                    <input type="text" class="form-control" id="EstadoCivil">
+                    <input type="text" class="form-control" id="EstadoCivil" name="EstadoCivil">
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-4">
                     <label for="Direccion">Dirección</label>
-                    <input type="text" class="form-control" id="Direccion">
+                    <input type="text" class="form-control" id="Direccion" name="Direccion">
                   </div>
                 </div>
               </div>
@@ -111,22 +142,23 @@
                 <div class="col">
                   <div class="mb-4">
                     <label for="Correo">Correo</label>
-                    <input type="text" class="form-control" id="Correo">
+                    <input type="text" class="form-control" id="Correo" name="Correo">
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-4">
                     <label for="Usuario">Usuario</label>
-                    <input type="text" class="form-control" id="Usuario">
+                    <input type="text" class="form-control" id="Usuario" name="Usuario">
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-4">
                     <label for="AnoContrato">Año de Contrato</label>
-                    <input type="text" class="form-control" id="AnoContrato">
+                    <input type="text" class="form-control" id="AnoContrato" name="AnoContrato">
                   </div>
                 </div>
               </div>
+              <input type="submit" name="CrearUsuario" value="Crear Usuario">
             </form>
           </section>
         </main>
