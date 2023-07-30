@@ -13,20 +13,30 @@ if (isset($_POST["CrearUsuario"])) {
   $Correo = $_POST["Correo"];
   $Usuario = $_POST["Usuario"];
   $AñoCont = $_POST["AnoContrato"];
+  $Contraseña = $_POST["Contraseña"];
+  $ConfirmarC = $_POST["ConfimarContraseña"];
 
-  $query = "INSERT INTO colaboradores (Nombre, `Primer Apellido`, `Segundo apellido`, Cargo, `Estado civil`, Direccion, Correo, Usuario, `Año de Contrato`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-  $Sentencia = mysqli_prepare($ObtenerConexion, $query);
-  mysqli_stmt_bind_param($Sentencia, "ssssssssi", $Nombre, $PrimerApellido, $SegundoApellido, $Puesto, $EstadoCivil, $Direccion, $Correo, $Usuario, $AñoCont);
-  mysqli_stmt_execute($Sentencia);
-  $Afectado = mysqli_stmt_affected_rows($Sentencia);
-  if ($Afectado == 1) {
-    echo "<script> alert ('El colaborador $Nombre se creó correctamente'); location.href='/Proyecto%20Progra%20III/CrearUsuario.php?CrearUsuario=Crear+Usuario'; </script>";
-  } else {
-    echo "<script> alert ('ERROR: El colaborador $Nombre no se creó correctamente'); location.href='/CrearUsuario.php'; </script>";
+  if ($Contraseña == $ConfirmarC){
+    $query = "INSERT INTO colaboradores (Nombre, `Primer Apellido`, `Segundo apellido`, Cargo, `Estado civil`, Direccion, Correo, Usuario, `Año de Contrato`,Contraseña) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+    $Sentencia = mysqli_prepare($ObtenerConexion, $query);
+    mysqli_stmt_bind_param($Sentencia, "ssssssssis", $Nombre, $PrimerApellido, $SegundoApellido, $Puesto, $EstadoCivil, $Direccion, $Correo, $Usuario, $AñoCont,$Contraseña);
+    mysqli_stmt_execute($Sentencia);
+    $Afectado = mysqli_stmt_affected_rows($Sentencia);
+    if ($Afectado == 1) {
+      echo "<script> alert ('El colaborador $Nombre se creó correctamente'); location.href='/Proyecto%20Progra%20III/src/database/CrearColaborador.php'; </script>";
+    } else {
+      echo "<script> alert ('ERROR: El colaborador $Nombre no se creó correctamente');</script>";
+    }
+    mysqli_stmt_close($Sentencia);
+    mysqli_close($ObtenerConexion);
+  }else{
+    echo "<script> alert ('ERROR: Las contraseñas indicas no coinciden, favor valide estos datos y cree su usuario');</script>";
+
   }
-  mysqli_stmt_close($Sentencia);
-  mysqli_close($ObtenerConexion);
 }
+if (isset($_POST["Volver"])) {
+  echo "<script> location.href='/Proyecto%20Progra%20III/src/index.html'; </script>";
+} 
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +97,7 @@ if (isset($_POST["CrearUsuario"])) {
           <h2>Colaborador</h2>
           <form class="col-md-6 col-lg-10" action="" method="POST">
             <div class="mb-4">
-              <img src="img/Usuario.png" alt="Vista previa de la imagen" class="img-thumbnail" width="200" height="100">
+              <img src="../img/Usuario.png" alt="Vista previa de la imagen" class="img-thumbnail" width="200" height="100">
 
             </div>
             <div class="row">
@@ -154,8 +164,32 @@ if (isset($_POST["CrearUsuario"])) {
                   <input type="text" class="form-control" id="AnoContrato" name="AnoContrato">
                 </div>
               </div>
+              <div class="row">
+              <div class="col">
+                <div class="mb-4">
+                  <label for="Contraseña">Crear contraseña</label>
+                  <input type="text" class="form-control" id="Contraseña" name="Contraseña">
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-4">
+                  <label for="ConfimarContraseña">Confirme su contraseña</label>
+                  <input type="text" class="form-control" id="ConfimarContraseña" name="ConfimarContraseña">
+                </div>
+              </div>
+            <div class="buttons mt-4">
+              <button type="submit" class="btn btn-primary me-2" name="CrearUsuario">
+                Crear Usuario
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                name="Volver"
+              >
+                Volver
+              </button>
             </div>
-            <input type="submit" name="CrearUsuario" value="Crear Usuario">
+        </div>
           </form>
         </section>
       </main>
