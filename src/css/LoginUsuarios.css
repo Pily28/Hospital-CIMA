@@ -1,0 +1,16 @@
+/* Agregar estilo de borde al formulario */
+.login-form form {
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Centrar el título "Iniciar sesión" */
+.login-form h2 {
+  text-align: center;
+}
+
+/* Centrar los botones */
+.login-form .buttons {
+  text-align: center;
+}
