@@ -3,7 +3,7 @@ include("ConexionBD.php");
 $ObtenerBD = new ConectarBD();
 $ObtenerConexion = $ObtenerBD->conex();
 if (isset($_POST["Registrarse"])) {
-  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
+  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/CrearColaborador.php'; </script>";
 } 
 ?>
 

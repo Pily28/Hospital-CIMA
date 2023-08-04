@@ -62,7 +62,7 @@ if (isset($_POST["Volver"])) {
     <!-- Sección pública -->
     <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary ">
       <div class="container">
-        <a class="navbar-brand" href="">CIMA</a>
+        <a class="navbar-brand" href="../index.html">CIMA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -71,16 +71,26 @@ if (isset($_POST["Volver"])) {
         <div class="collapse navbar-collapse justify-content-center" id="navbar-content" class="collapse navbar-collapse justify-content-center" id="navbar-content">
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Tramites
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Registros</a></li>
-                <li><a class="dropdown-item" href="SeccionAdm.html">Area Administrativa</a></li>
-                <li><a class="dropdown-item" href="#">Login Usuarios</a></li>
+                <li>
+                    <a class="dropdown-item" href="Registro.php">Registros</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="CrearColaborador.php"
+                      >Área Administrativa</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="LoginUsuarios.php"
+                      >Login Usuarios</a
+                    >
+                  </li>
               </ul>
             </li>
             <li class="nav-item">
