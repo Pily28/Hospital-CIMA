@@ -1,9 +1,31 @@
 <?php
+session_start();// Iniciar la sesión antes de usar las variables de sesión
+
 include("ConexionBD.php");
 $ObtenerBD = new ConectarBD();
 $ObtenerConexion = $ObtenerBD->conex();
 if (isset($_POST["Registrarse"])) {
   echo "<script> location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
+  
+}
+if (isset($_POST["IniciarSesion"])) {
+  $Usuario = $_POST["Usuario"];
+  $Contraseña = $_POST["Contraseña"];
+
+  $sql = "SELECT Identificacion, Contraseña , imagen FROM usuarios WHERE Identificacion = '$Usuario' and Contraseña = '$Contraseña'";
+  $result = $ObtenerConexion->query($sql);
+
+  if ($result->num_rows == 1){
+    $row = $result->fetch_assoc();
+    $_SESSION["Identificacion"] = $row["Identificacion"];
+    $_SESSION["Contraseña"] = $row["Contraseña"];
+    $_SESSION["imagen"] = $row["imagen"];
+    header("Location: Inicio.php");
+    exit();
+  } else {
+    echo "<script> alert ('ERROR: El usuario y la contraseña no coinciden');</script>";
+  }
+  mysqli_close($ObtenerConexion);
 } 
 ?>
 
@@ -30,7 +52,7 @@ if (isset($_POST["Registrarse"])) {
       crossorigin="anonymous"
     />
   </head>
-  <link rel="stylesheet" href="css/Login.css" />
+  <link rel="stylesheet" href="../css/Login.css" />
   <header class="fixed-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
@@ -106,25 +128,27 @@ if (isset($_POST["Registrarse"])) {
           <form class="container col-lg-4 col-md-6 col-sm-8 col-10" method="POST">
             <h2 class="mb-4">Iniciar sesión</h2>
             <div class="form-group">
-              <label for="username">Nombre de usuario</label>
+              <label for="Usuario">Nombre de usuario</label>
               <input
                 type="text"
                 class="form-control"
-                id="username"
+                id="Usuario"
+                name="Usuario"
                 placeholder="Ingrese su nombre de usuario"
               />
             </div>
             <div class="form-group mt-3">
-              <label for="password">Contraseña</label>
+              <label for="Contraseña">Contraseña</label>
               <input
                 type="password"
                 class="form-control"
-                id="password"
+                id="Contraseña"
+                name="Contraseña"
                 placeholder="Ingrese su contraseña"
               />
             </div>
             <div class="buttons mt-4">
-              <button type="submit" class="btn btn-primary me-2">
+              <button type="submit" class="btn btn-primary me-2" name="IniciarSesion">
                 Iniciar sesión
               </button>
               <button

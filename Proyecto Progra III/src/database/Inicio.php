@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -13,8 +17,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/Inicio.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,11 +28,12 @@
     />
   </head>
   <body>
+  
     <!-- Header -->
     <header class="fixed-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-          <a class="navbar-brand" href="index.html">CIMA</a>
+          <a class="navbar-brand" href="Inicio.php">CIMA</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -45,7 +51,7 @@
           >
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
+                <a class="nav-link active" aria-current="page" href="Inicio.php"
                   >Inicio</a
                 >
               </li>
@@ -84,6 +90,19 @@
                 >
               </li>
             </ul>
+            
+          </div>
+          <div class="user-info">
+            <div class="profile-picture">
+              <img src="<?php echo $_SESSION["imagen"]; ?>" alt="Imagen de perfil" id="profile-img">
+              <ul class="options-list" id="options-list">
+                <li><a class="dropdown-item" href="Actualizar_Contrasena.php">Actualizar Información de usuario</a></li>
+                <li><a class="dropdown-item" href="Cambio_Contrasena.php">Cambiar Contraseña</a></li>
+                <li><a class="dropdown-item" href="CerrarSesion.php">Cerrar Sesion</a>
+              </li>
+              </ul>
+            </div>
+            <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>
           </div>
         </div>
       </nav>
@@ -123,7 +142,7 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
-                  src="img/grupo_cima.jpg"
+                  src="../img/grupo_cima.jpg"
                   class="d-block w-100"
                   style="height: 600px"
                   alt="..."
@@ -132,12 +151,12 @@
                   <h5>Citas de inmediato con nuestro personal</h5>
                   <button type="button" id="ver-citas-btn" class="btn btn-warning">
                     Citas en línea
-                  </button>
+                </button>
                 </div>
               </div>
               <div class="carousel-item">
                 <img
-                  src="img/cima_operaciones.jpg"
+                  src="../img/cima_operaciones.jpg"
                   class="d-block w-100"
                   style="height: 600px"
                   alt="..."
@@ -151,7 +170,7 @@
               </div>
               <div class="carousel-item">
                 <img
-                  src="img/cima_instalaciones.jpg"
+                  src="../img/cima_instalaciones.jpg"
                   class="d-block w-100"
                   alt="..."
                   style="height: 600px"
@@ -191,56 +210,23 @@
           </div>
         </section>
 
-             <section class="servicios-ci">
+        <section>
           <div>
             <h2>Servicios</h2>
             <p>
               Aquí se presenta información sobre por qué el hospital debe ser
               elegido entre muchos otros.
             </p>
-            <div class="container-servicios">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Medicina Adomicilio</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver mas</a>
-                </div>
-              </div>
-               
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Ambulacia Privada</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver mas</a>
-                </div>
-              </div>
-
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Medicina Privada</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Ver mas</a>
-                </div>
-              </div>
-
-
-            </div>
-
           </div>
         </section>
 
         <section>
           <div>
-            <h2>Porque elegirnos?</h2>
-         <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
+            <h2>Programa de Acción Social</h2>
+            <p>
+              Aquí se presenta información sobre por qué el hospital debe ser
+              elegido entre muchos otros.
+            </p>
           </div>
         </section>
       </main>
@@ -251,7 +237,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-3">
-            <img class="mb-2" src="img/health-and-care.png" alt="" />
+            <img class="mb-2" src="../img/health-and-care.png" alt="" />
           </div>
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
@@ -294,6 +280,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <script src="js/index.js"></script>
+    <script src="../js/Inicio.js"></script>
   </body>
 </html>

@@ -1,0 +1,54 @@
+.profile-picture {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+   
+
+  .profile-picture {
+    position: relative;
+    display: inline-block;
+  }
+
+ .options-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    list-style: none;
+    z-index: 999;
+  }
+
+  .profile-picture:hover #options-list {
+    display: block;
+  }
+
+  #options-list li {
+    cursor: pointer;
+  }
+
+  #options-list li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .user-info {
+    float: right;
+    text-align: center;
+  }

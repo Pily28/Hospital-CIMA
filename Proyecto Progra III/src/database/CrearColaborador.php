@@ -178,13 +178,13 @@ if (isset($_POST["Volver"])) {
               <div class="col">
                 <div class="mb-4">
                   <label for="Contraseña">Crear contraseña</label>
-                  <input type="text" class="form-control" id="Contraseña" name="Contraseña">
+                  <input type="password" class="form-control" id="Contraseña" name="Contraseña">
                 </div>
               </div>
               <div class="col">
                 <div class="mb-4">
                   <label for="ConfimarContraseña">Confirme su contraseña</label>
-                  <input type="text" class="form-control" id="ConfimarContraseña" name="ConfimarContraseña">
+                  <input type="password" class="form-control" id="ConfimarContraseña" name="ConfimarContraseña">
                 </div>
               </div>
             <div class="buttons mt-4">

@@ -13,6 +13,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
     <!-- Stylesheets -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,7 +21,6 @@
       crossorigin="anonymous"
     />
   </head>
-  <link rel="stylesheet" href="css/LoginUsuarios.css" />
   <header class="fixed-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
@@ -62,15 +62,15 @@
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <a class="dropdown-item" href="Registro.html">Registros</a>
+                  <a class="dropdown-item" href="database/Registro.php">Registros</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="SeccionUsuario.html"
+                  <a class="dropdown-item" href="database/CrearColaborador.php"
                     >Área Administrativa</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="LoginUsarios.html"
+                  <a class="dropdown-item" href="database/LoginUsuarios.php"
                     >Login Usuarios</a
                   >
                 </li>
@@ -90,46 +90,49 @@
     </nav>
   </header>
   <body>
-    <section class="login-form">
-      <div class="container-fluid main-container">
-        <div class="d-flex align-items-center justify-content-center vh-100">
-          <form class="container col-lg-4 col-md-6 col-sm-8 col-10">
-            <h2 class="mb-4">Iniciar sesión</h2>
-            <div class="form-group">
-              <label for="username">Nombre de usuario</label>
-              <input
-                type="text"
-                class="form-control"
-                id="username"
-                placeholder="Ingrese su nombre de usuario"
-              />
-            </div>
-            <div class="form-group mt-3">
-              <label for="password">Contraseña</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Ingrese su contraseña"
-              />
-            </div>
-            <div class="buttons mt-4">
-              <button type="submit" class="btn btn-primary me-2">
-                Iniciar sesión
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="btn-register"
-                onclick="redirigir()"
-              >
-                Registrarse
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
+    <h1>Solicitud de cita en línea</h1>
+    <form method="post" action="enviar_cita.php">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" name="nombre" id="nombre" required><br>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="servicio">Seleccione el servicio:</label>
+        <select name="servicio" id="servicio" required>
+            <option value="Servicio 1">Servicio 1</option>
+            <option value="Servicio 2">Servicio 2</option>
+            <!-- Otras opciones de servicios -->
+        </select><br>
+
+        <label for="fecha">Fecha de la cita:</label>
+        <input type="date" name="fecha" id="fecha" required><br>
+
+        <!-- Agregar el espacio con horas predeterminadas -->
+        <label for="hora">Hora de la cita:</label>
+        <select name="hora" id="hora" required>
+          <?php
+            include("ConexionBD.php");
+            $ObtenerBD = new ConectarBD();
+            $ObtenerConexion = $ObtenerBD->conex();
+
+            // Consulta para obtener las fechas y horarios disponibles para el día actual
+            $sql = "SELECT fecha, horario FROM citas WHERE Disponible >= 'Si'";
+            $result = $conn->query($sql);
+
+
+            mysqli_stmt_close($Sentencia);
+            mysqli_close($ObtenerConexion);
+
+          ?>
+        </select><br>
+
+        <label for="mensaje">Mensaje adicional:</label><br>
+        <textarea name="mensaje" id="mensaje" rows="4" cols="40"></textarea><br>
+
+        <input type="submit" name="solicitar_cita" value="Solicitar cita">
+    </form>
+
     <footer class="pt-4 pt-md-5 border-top">
       <div class="container">
         <div class="row">
