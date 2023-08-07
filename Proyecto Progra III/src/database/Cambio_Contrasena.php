@@ -1,5 +1,26 @@
 <?php
 session_start();
+include("ConexionBD.php");
+$ObtenerBD = new ConectarBD();
+$ObtenerConexion = $ObtenerBD->conex();
+
+if (isset($_POST["recuperar"])) {
+  $email = $_POST["email"];
+
+  // Generar una nueva contraseña aleatoria
+  $nueva_contrasena = generar_contrasena_aleatoria(); // Implementa esta función según tus necesidades
+
+  // Actualizar la contraseña en la base de datos y enviarla por correo
+  $sql = "UPDATE usuarios SET password = '$nueva_contrasena' WHERE email = '$email'";
+  if ($conn->query($sql) === TRUE) {
+      enviar_correo($email, $nueva_contrasena); // Implementa esta función según tus necesidades
+      echo "La contraseña se ha reiniciado y se ha enviado al correo proporcionado.";
+  } else {
+      echo "Error al reiniciar la contraseña: ";
+  }
+}
+
+mysqli_close($ObtenerConexion);
 ?>
 
 <!DOCTYPE html>
@@ -106,6 +127,13 @@ session_start();
       </nav>
     </header>
 
+    </h1>Recuperar contraseña</h1>
+    <form method="post" action="procesar_recuperar.php">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <input type="submit" name="recuperar" value="Recuperar contraseña">
+    </form>
     
 
     <!-- Footer -->

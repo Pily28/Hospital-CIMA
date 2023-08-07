@@ -8,6 +8,7 @@ if (isset($_POST["CrearUsuario"])) {
   $PrimerApellido = $_POST["PrimerApellido"];
   $SegundoApellido = $_POST["SegundoApellido"];
   $Identificacion = $_POST["Identificacion"];
+  $Correo = $_POST["Correo"];
   $Sexo = $_POST["sexo"];
   $Nacimiento = $_POST["nacimiento"];
   $Alergias = $_POST["Alergias"];
@@ -17,7 +18,7 @@ if (isset($_POST["CrearUsuario"])) {
   $ConfirmarC = $_POST["ConfimarContraseña"];
 
   // Validar que los campos obligatorios estén completos
-  if (empty($Nombre) || empty($PrimerApellido) || empty($Identificacion) || empty($Contraseña) || empty($ConfirmarC)) {
+  if (empty($Nombre) || empty($PrimerApellido) || empty($Identificacion) || empty($Correo) || empty($Contraseña) || empty($ConfirmarC)) {
     echo "<script> alert ('ERROR: Por favor, complete todos los campos obligatorios.'); </script>";
   } else {
     // Verificar si se ha enviado un archivo
@@ -46,9 +47,9 @@ if (isset($_POST["CrearUsuario"])) {
             if (strlen($Contraseña) < 8 || !preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $Contraseña)) {
               echo "<script> alert ('ERROR: La contraseña debe tener al menos 8 caracteres y contener letras y números.'); </script>";
             } else {
-              $query = "INSERT INTO usuarios (Nombre, `Primer Apellido`, `Segundo apellido`, Identificacion, Sexo, `Fecha de nacimiento`, Alergias, Tratamiento, `Estado civil`, Contraseña, Imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+              $query = "INSERT INTO usuarios (Nombre, `Primer Apellido`, `Segundo apellido`, Identificacion, Correo, Sexo, `Fecha de nacimiento`, Alergias, Tratamiento, `Estado civil`, Contraseña, Imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
               $Sentencia = mysqli_prepare($ObtenerConexion, $query);
-              mysqli_stmt_bind_param($Sentencia, "sssssssssss", $Nombre, $PrimerApellido, $SegundoApellido, $Identificacion, $Sexo, $Nacimiento, $Alergias, $Tratamiento, $EstadoCivil, $Contraseña, $Imagen);
+              mysqli_stmt_bind_param($Sentencia, "ssssssssssss", $Nombre, $PrimerApellido, $SegundoApellido, $Identificacion, $Correo, $Sexo, $Nacimiento, $Alergias, $Tratamiento, $EstadoCivil, $Contraseña, $Imagen);
               mysqli_stmt_execute($Sentencia);
               $Afectado = mysqli_stmt_affected_rows($Sentencia);
               if ($Afectado == 1) {
@@ -263,18 +264,38 @@ if (isset($_POST["Volver"])) {
             </div>
           </div>
           <div class="row">
-              <div class="col">
-                <div class="mb-4">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="Correo">Correo Electronico</label>
+                    <input type="text" class="form-control" id="Correo" name="Correo" placeholder="Ingrese su correo electronico">
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="form-group">
                   <label for="Contraseña">Crear contraseña</label>
-                  <input type="password" class="form-control" id="Contraseña" name="Contraseña">
+                  <input type="password" class="form-control" id="Contraseña" name="Contraseña" placeholder="Ingrese su contraseña">
                 </div>
               </div>
-              <div class="col">
-                <div class="mb-4">
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="form-group">
                   <label for="ConfimarContraseña">Confirme su contraseña</label>
-                  <input type="password" class="form-control" id="ConfimarContraseña" name="ConfimarContraseña">
+                  <input type="password" class="form-control" id="ConfimarContraseña" name="ConfimarContraseña" placeholder="Confirme su contraseña">
                 </div>
               </div>
+            </div>
+          </div>
+
           <div class="buttons mt-4">
               <button type="submit" class="btn btn-primary me-2" name="CrearUsuario">
                 Crear Usuario

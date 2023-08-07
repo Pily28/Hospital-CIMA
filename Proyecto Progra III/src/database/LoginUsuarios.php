@@ -12,14 +12,24 @@ if (isset($_POST["IniciarSesion"])) {
   $Usuario = $_POST["Usuario"];
   $Contraseña = $_POST["Contraseña"];
 
-  $sql = "SELECT Identificacion, Contraseña , imagen FROM usuarios WHERE Identificacion = '$Usuario' and Contraseña = '$Contraseña'";
+  $sql = "SELECT Nombre, `Primer Apellido`, `Segundo Apellido`, Identificacion, Correo, Sexo, `Fecha de nacimiento`, Alergias, Tratamiento, `Estado Civil`, Contraseña , imagen FROM usuarios WHERE Identificacion = '$Usuario' and Contraseña = '$Contraseña'";
   $result = $ObtenerConexion->query($sql);
 
   if ($result->num_rows == 1){
     $row = $result->fetch_assoc();
+    $_SESSION["Nombre"] = $row["Nombre"];
+    $_SESSION["Primer Apellido"] = $row["Primer Apellido"];
+    $_SESSION["Segundo Apellido"] = $row["Segundo Apellido"];
     $_SESSION["Identificacion"] = $row["Identificacion"];
+    $_SESSION["Correo"] = $row["Correo"];
+    $_SESSION["Sexo"] = $row["Sexo"];
+    $_SESSION["Fecha de nacimiento"] = $row["Fecha de nacimiento"];
+    $_SESSION["Alergias"] = $row["Alergias"];
+    $_SESSION["Tratamiento"] = $row["Tratamiento"];
+    $_SESSION["Estado Civil"] = $row["Estado Civil"];
     $_SESSION["Contraseña"] = $row["Contraseña"];
     $_SESSION["imagen"] = $row["imagen"];
+    
     header("Location: Inicio.php");
     exit();
   } else {
