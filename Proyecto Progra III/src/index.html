@@ -79,7 +79,7 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="contacto.html"
+                  href="./contacto.html"
                   >Contacto</a
                 >
               </li>
@@ -90,8 +90,7 @@
     </header>
 
     <!-- Content -->
-    <div class="container-fluid">
-      <main class="my-3">
+    <main  class="container-fluid">
         <section>
           <div
             id="carouselExampleCaptions"
@@ -130,7 +129,7 @@
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Citas de inmediato con nuestro personal</h5>
-                  <button type="button" id="ver-citas-btn" class="btn btn-warning">
+                  <button type="button" id="ver-citas-btn" class="btn btn-warning"><a  href="./database/Citas.PHP"></a>
                     Citas en línea
                   </button>
                 </div>
@@ -144,8 +143,8 @@
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>La mejor atención médica privada</h5>
-                  <button type="button" class="btn btn-warning">
-                    Más información
+                  <button type="button" class="btn btn-warning"><a  href="./database/Citas.PHP"></a>
+                    Cita en linea
                   </button>
                 </div>
               </div>
@@ -158,7 +157,7 @@
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Atención en minutos</h5>
-                  <button type="button" id="ver-citas-btn" class="btn btn-warning">
+                  <button type="button" id="ver-citas-btn" class="btn btn-warning"><a  href="./database/Citas.PHP"></a>
                     Citas en línea
                   </button>
                 </div>
@@ -190,16 +189,19 @@
             </button>
           </div>
         </section>
+      </div>
 
-             <section class="servicios-ci">
+<!---Servicios-->
+
+    <section class="servicios-ci">
           <div>
             <h2>Servicios</h2>
             <p>
               Aquí se presenta información sobre por qué el hospital debe ser
               elegido entre muchos otros.
             </p>
-            <div class="container-servicios">
-              <div class="card" style="width: 18rem;">
+            <div class="container-servicios d-flex justify-content-center">
+              <div class="card" style="width: 25rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Medicina Adomicilio</h5>
@@ -225,27 +227,22 @@
                   <a href="#" class="btn btn-primary">Ver mas</a>
                 </div>
               </div>
-
-
             </div>
-
-          </div>
         </section>
 
         <section>
           <div>
             <h2>Porque elegirnos?</h2>
+            <div class="d-flex justify-content-center">
          <div class="card" style="width: 18rem;">
               <img src="..." class="card-img-top" alt="...">
               <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
+            </div>
           </div>
-        </section>
-      </main>
-    </div>
-
+        </section></main>
     <!-- Footer -->
     <footer class="pt-4 pt-md-5 border-top">
       <div class="container">
