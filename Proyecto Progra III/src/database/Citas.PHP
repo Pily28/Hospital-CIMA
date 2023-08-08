@@ -13,6 +13,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="css/LoginUsuarios.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,8 +23,13 @@
       crossorigin="anonymous"
     />
   </head>
-  <link rel="stylesheet" href="css/LoginUsuarios.css" />
-  <header class="fixed-fluid">
+
+
+
+
+  <body>
+<!---Cabecera------------------->
+<header class="fixed-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
         <a class="navbar-brand" href="index.html">CIMA</a>
@@ -62,15 +70,15 @@
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <a class="dropdown-item" href="Registro.html">Registros</a>
+                  <a class="dropdown-item" href="./Registro.php">Registros</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="SeccionUsuario.html"
+                  <a class="dropdown-item" href="./LoginColaboradores.php"
                     >Área Administrativa</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="LoginUsarios.html"
+                  <a class="dropdown-item" href="./LoginUsuarios.php"
                     >Login Usuarios</a
                   >
                 </li>
@@ -80,7 +88,7 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="contacto.html"
+                href="../contacto.html"
                 >Contacto</a
               >
             </li>
@@ -89,7 +97,9 @@
       </div>
     </nav>
   </header>
-  <body>
+
+<!-------Contenido---------------------->
+<main>
     <section class="login-form">
       <div class="container-fluid main-container">
         <div class="d-flex align-items-center justify-content-center vh-100">
@@ -130,43 +140,41 @@
         </div>
       </div>
     </section>
-    <footer class="pt-4 pt-md-5 border-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-3">
-            <img class="mb-2" src="img/health-and-care.png" alt="" />
-          </div>
-          <div class="col-6 col-md-3">
-            <h5>Localización</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">San Ramón</a></li>
-              <li><a class="text-muted" href="#">San Carlos</a></li>
-              <li><a class="text-muted" href="#">Rohrmoser</a></li>
-              <li><a class="text-muted" href="#">Jacó</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3">
-            <h5>Redes Sociales</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Instagram</a></li>
-              <li><a class="text-muted" href="#">Facebook</a></li>
-              <li><a class="text-muted" href="#">Twitter</a></li>
-              <li><a class="text-muted" href="#">Youtube</a></li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-3">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Team</a></li>
-              <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="#">Privacy</a></li>
-              <li><a class="text-muted" href="#">Terms</a></li>
-            </ul>
+</main>
+
+  <!-----Pie de pagina-------->
+  <footer class="pt-4 pt-md-5 border-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-3">
+              <img class="mb-2" src="img/health-and-care.png" alt="" />
+            </div>
+            <div class="col-6 col-md-3">
+              <h5>Localización</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="./Sede.Belen.html">Belen</a></li>
+                <li><a class="text-muted" href="./Sede-Escazu.html">Escazu</a></li>
+                <li><a class="text-muted" href="./Sede-SanPedro.html">San Pedro</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3">
+              <h5>Redes Sociales</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Instagram</a></li>
+                <li><a class="text-muted" href="#">Facebook</a></li>
+                <li><a class="text-muted" href="#">Youtube</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-3">
+              <h5>About</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
+      
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
-
+      </footer>
     <!-- JavaScript -->
     <script src="js/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>

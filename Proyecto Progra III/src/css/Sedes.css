@@ -1,0 +1,52 @@
+*{
+    margin: 100%px;
+    padding: auto;
+    box-sizing: border-box;
+
+}
+
+
+:root{
+   --black-blue: #001C30;
+    --Navy-blue: #176B87;
+    --Teal-blue-mint: #64CCC5;
+    --cold-mint: #DAFFFB;
+
+}
+
+
+/****Cambios sede Belen **/
+.card-sede-Belen {
+    display: flex;
+    justify-content:center;
+     height: 35rem;
+     margin: 70px;   
+}
+
+.card-text  {
+     margin: 15px;
+}
+
+.card-img  {
+    width: 300px;
+    height: 545px;
+}
+
+.map {
+    margin: 50px;
+}
+
+.title-localizacion {
+    text-align: center;
+   
+}
+
+.map-localization {
+    padding: 40px;
+    width: 80rem;
+    height: 40rem;
+}
+
+footer {
+    background-color: var(--Teal-blue-mint);
+}

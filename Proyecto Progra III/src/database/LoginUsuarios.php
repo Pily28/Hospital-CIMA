@@ -6,7 +6,7 @@ $ObtenerBD = new ConectarBD();
 $ObtenerConexion = $ObtenerBD->conex();
 if (isset($_POST["Registrarse"])) {
   echo "<script> location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
-  
+
 }
 if (isset($_POST["IniciarSesion"])) {
   $Usuario = $_POST["Usuario"];
@@ -65,7 +65,9 @@ if (isset($_POST["IniciarSesion"])) {
 
     />
   </head>
-  <link rel="stylesheet" href="css/Login.css" />
+  <body>
+
+  <!--------Cabeza de la pagina------>
   <header class="fixed-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
@@ -107,15 +109,15 @@ if (isset($_POST["IniciarSesion"])) {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <a class="dropdown-item" href="Registro.php">Registros</a>
+                  <a class="dropdown-item" href="./Registro.php">Registros</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="CrearColaborador.php"
+                  <a class="dropdown-item" href="./LoginColaboradores.php"
                     >Área Administrativa</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="LoginUsuarios.php"
+                  <a class="dropdown-item" href="./LoginUsuarios.php"
                     >Login Usuarios</a
                   >
                 </li>
@@ -134,7 +136,10 @@ if (isset($_POST["IniciarSesion"])) {
       </div>
     </nav>
   </header>
-  <body>
+
+
+  <!--Contenido-------------------------->
+  <main>
     <section class="login-form">
       <div class="container-fluid main-container">
         <div class="d-flex align-items-center justify-content-center vh-100">
@@ -176,7 +181,7 @@ if (isset($_POST["IniciarSesion"])) {
         </div>
       </div>
     </section>
-
+  </main>
 
    <!---Pie de la pagina--->
     <footer class="pt-4 pt-md-5 border-top">
