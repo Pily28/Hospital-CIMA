@@ -1,9 +1,41 @@
 <?php
+session_start();// Iniciar la sesión antes de usar las variables de sesión
+
 include("ConexionBD.php");
 $ObtenerBD = new ConectarBD();
 $ObtenerConexion = $ObtenerBD->conex();
 if (isset($_POST["Registrarse"])) {
   echo "<script> location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
+  
+}
+if (isset($_POST["IniciarSesion"])) {
+  $Usuario = $_POST["Usuario"];
+  $Contraseña = $_POST["Contraseña"];
+
+  $sql = "SELECT Nombre, `Primer Apellido`, `Segundo Apellido`, Identificacion, Correo, Sexo, `Fecha de nacimiento`, Alergias, Tratamiento, `Estado Civil`, Contraseña , imagen FROM usuarios WHERE Identificacion = '$Usuario' and Contraseña = '$Contraseña'";
+  $result = $ObtenerConexion->query($sql);
+
+  if ($result->num_rows == 1){
+    $row = $result->fetch_assoc();
+    $_SESSION["Nombre"] = $row["Nombre"];
+    $_SESSION["Primer Apellido"] = $row["Primer Apellido"];
+    $_SESSION["Segundo Apellido"] = $row["Segundo Apellido"];
+    $_SESSION["Identificacion"] = $row["Identificacion"];
+    $_SESSION["Correo"] = $row["Correo"];
+    $_SESSION["Sexo"] = $row["Sexo"];
+    $_SESSION["Fecha de nacimiento"] = $row["Fecha de nacimiento"];
+    $_SESSION["Alergias"] = $row["Alergias"];
+    $_SESSION["Tratamiento"] = $row["Tratamiento"];
+    $_SESSION["Estado Civil"] = $row["Estado Civil"];
+    $_SESSION["Contraseña"] = $row["Contraseña"];
+    $_SESSION["imagen"] = $row["imagen"];
+    
+    header("Location: Inicio.php");
+    exit();
+  } else {
+    echo "<script> alert ('ERROR: El usuario y la contraseña no coinciden');</script>";
+  }
+  mysqli_close($ObtenerConexion);
 } 
 ?>
 
@@ -33,105 +65,103 @@ if (isset($_POST["Registrarse"])) {
 
     />
   </head>
-
-
-  <body>
-    <!--Cabecera de la pagina--->
-    <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">CIMA</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar-content"
-            aria-controls="navbar-content"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbar-content"
-          >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="./Registro.php">Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./LoginColaboradores.php"
-                      >Área Administrativa</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./LoginUsuarios.php"
-                      >Login Usuarios</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="../contacto.html7"
-                  >Contacto</a
-                >
-              </li>
-            </ul>
-          </div>
+  <link rel="stylesheet" href="css/Login.css" />
+  <header class="fixed-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">CIMA</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar-content"
+          aria-controls="navbar-content"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbar-content"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Trámites
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="Registro.php">Registros</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="CrearColaborador.php"
+                    >Área Administrativa</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="LoginUsuarios.php"
+                    >Login Usuarios</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="contacto.html"
+                >Contacto</a
+              >
+            </li>
+          </ul>
         </div>
-      </nav>
-</header>
- <!--Contenido--->
-    <main>
+      </div>
+    </nav>
+  </header>
+  <body>
     <section class="login-form">
       <div class="container-fluid main-container">
         <div class="d-flex align-items-center justify-content-center vh-100">
           <form class="container col-lg-4 col-md-6 col-sm-8 col-10" method="POST">
             <h2 class="mb-4">Iniciar sesión</h2>
             <div class="form-group">
-              <label for="username">Nombre de usuario</label>
+              <label for="Usuario">Nombre de usuario</label>
               <input
                 type="text"
                 class="form-control"
-                id="username"
+                id="Usuario"
+                name="Usuario"
                 placeholder="Ingrese su nombre de usuario"
               />
             </div>
             <div class="form-group mt-3">
-              <label for="password">Contraseña</label>
+              <label for="Contraseña">Contraseña</label>
               <input
                 type="password"
                 class="form-control"
-                id="password"
+                id="Contraseña"
+                name="Contraseña"
                 placeholder="Ingrese su contraseña"
               />
             </div>
             <div class="buttons mt-4">
-              <button type="submit" class="btn btn-primary me-2">
+              <button type="submit" class="btn btn-primary me-2" name="IniciarSesion">
                 Iniciar sesión
               </button>
               <button

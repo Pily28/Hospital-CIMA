@@ -1,0 +1,27 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.table {
+  background-color: #fff;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #454d55;
+}
+
+.table tbody td {
+  border-color: #ced4da;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
