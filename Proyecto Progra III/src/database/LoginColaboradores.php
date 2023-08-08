@@ -1,3 +1,26 @@
+<?php
+include("ConexionBD.php");
+$ObtenerBD = new ConectarBD();
+$ObtenerConexion = $ObtenerBD->conex();
+if (isset($_POST["Registrarse"])) {
+  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/CrearColaborador.php'; </script>";
+} 
+if (isset($_POST["IniciarSesion"])) {
+  $Usuario = $_POST["Usuario"];
+  $Contraseña = $_POST["Contraseña"];
+
+  $sql = "SELECT Usuario, Contraseña FROM colaboradores WHERE Usuario = '$Usuario' and Contraseña = '$Contraseña'";
+  $result = $ObtenerConexion->query($sql);
+
+  if ($result->num_rows == 1){
+    header("Location: ../index.html");
+    exit();
+  } else {
+    echo "<script> alert ('ERROR: El usuario y la contraseña no coinciden');</script>";
+  }
+  mysqli_close($ObtenerConexion);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -27,31 +50,7 @@
 
   <body>
 
-  <<<<<<< HEAD
-=======
-<?php
-include("ConexionBD.php");
-$ObtenerBD = new ConectarBD();
-$ObtenerConexion = $ObtenerBD->conex();
-if (isset($_POST["Registrarse"])) {
-  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/CrearColaborador.php'; </script>";
-} 
-if (isset($_POST["IniciarSesion"])) {
-  $Usuario = $_POST["Usuario"];
-  $Contraseña = $_POST["Contraseña"];
 
-  $sql = "SELECT Usuario, Contraseña FROM colaboradores WHERE Usuario = '$Usuario' and Contraseña = '$Contraseña'";
-  $result = $ObtenerConexion->query($sql);
-
-  if ($result->num_rows == 1){
-    header("Location: ../index.html");
-    exit();
-  } else {
-    echo "<script> alert ('ERROR: El usuario y la contraseña no coinciden');</script>";
-  }
-  mysqli_close($ObtenerConexion);
-}
-?>
 
 
 <!--Cabecera----------->

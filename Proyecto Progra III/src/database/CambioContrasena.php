@@ -91,13 +91,13 @@ mysqli_close($ObtenerConexion);
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a class="dropdown-item" href="Registro.php">Registros</a>
+                    <a class="dropdown-item" href="database/Registro.php">Registros</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="LoginColaboradores.php">Área Administrativa</a>
+                    <a class="dropdown-item" href="database/LoginColaboradores.php">Área Administrativa</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="LoginUsuarios.php">Login Usuarios</a>
+                    <a class="dropdown-item" href="database/LoginUsuarios.php">Login Usuarios</a>
                   </li>
                 </ul>
               </li>
@@ -113,15 +113,19 @@ mysqli_close($ObtenerConexion);
             
           </div>
           <div class="user-info">
-            <div class="profile-picture">
-              <img src="<?php echo $_SESSION["imagen"]; ?>" alt="Imagen de perfil" id="profile-img">
-              <ul class="options-list" id="options-list">
-                <li><a class="dropdown-item" href="Actualizar_Contrasena.php">Actualizar Información de usuario</a></li>
-                <li><a class="dropdown-item" href="Cambio_Contrasena.php">Cambiar Contraseña</a></li>
-                <li><a class="dropdown-item" href="CerrarSesion.php">Cerrar Sesion</a>
-              </ul>
-            </div>
             <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>
+            </div>
+              <div class="profile-picture">
+                <img src="<?php echo $_SESSION["imagen"]; ?>" alt="Imagen de perfil" id="profile-img">
+                <ul class="options-list" id="options-list">
+                  <li><a class="dropdown-item" href="ActualizarUsuario.php">Actualizar Información de usuario</a></li>
+                  <li><a class="dropdown-item" href="CambioContrasena.php">Cambiar Contraseña</a></li>
+                  <li><a class="dropdown-item" href="ExpedienteDigital.php">Expediente Digital</a></li>
+                  <li><a class="dropdown-item" href="CerrarSesion.php">Cerrar Sesion</a>
+                </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </nav>

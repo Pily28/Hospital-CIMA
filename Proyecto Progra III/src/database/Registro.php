@@ -95,9 +95,9 @@ if (isset($_POST["Volver"])) {
     <!-- Favicon -->
     <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="css/Login.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/Registro.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -280,7 +280,7 @@ if (isset($_POST["Volver"])) {
                   <select
                     id="sexo"
                     name="sexo"
-                    class="form-control"
+                    class="form-select"
                     onchange="seleccionarSexo()"
                   >
                     <option value="Femenino">Femenino</option>
@@ -398,7 +398,7 @@ if (isset($_POST["Volver"])) {
         </div>
       </form>
     </section>
-    <script src="/js/Registro.js"></script>
+    
   </main>
   <!-------Pie de la pagina------>
 
@@ -408,7 +408,7 @@ if (isset($_POST["Volver"])) {
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-3">
-            <img class="mb-2" src="img/health-and-care.png" alt="" />
+            <img class="mb-2" src="../img/health-and-care.png" alt="" />
           </div>
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
@@ -446,5 +446,6 @@ if (isset($_POST["Volver"])) {
       crossorigin="anonymous"
     ></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src="../js/Registro.js"></script>
 </body>
 </html>
