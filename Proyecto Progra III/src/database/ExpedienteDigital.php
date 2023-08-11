@@ -32,7 +32,7 @@
 
   <body>
 
-  <?php
+<?php
 session_start();
 ?>
 

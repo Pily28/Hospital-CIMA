@@ -1,85 +1,3 @@
-<?php
-include("ConexionBD.php");
-$ObtenerBD = new ConectarBD();
-$ObtenerConexion = $ObtenerBD->conex();
-
-if (isset($_POST["CrearUsuario"])) {
-  $Nombre = $_POST["nombre"];
-  $PrimerApellido = $_POST["PrimerApellido"];
-  $SegundoApellido = $_POST["SegundoApellido"];
-  $Identificacion = $_POST["Identificacion"];
-  $Correo = $_POST["Correo"];
-  $Sexo = $_POST["sexo"];
-  $Nacimiento = $_POST["nacimiento"];
-  $Alergias = $_POST["Alergias"];
-  $Tratamiento = $_POST["tratamiento"];
-  $EstadoCivil = $_POST["EstadoCivil"];
-  $Contraseña = $_POST["Contraseña"];
-  $ConfirmarC = $_POST["ConfimarContraseña"];
-
-  // Validar que los campos obligatorios estén completos
-  if (empty($Nombre) || empty($PrimerApellido) || empty($Identificacion) || empty($Correo) || empty($Contraseña) || empty($ConfirmarC)) {
-    echo "<script> alert ('ERROR: Por favor, complete todos los campos obligatorios.'); </script>";
-  } else {
-    // Verificar si se ha enviado un archivo
-    if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
-      $nombreTemporal = $_FILES['imagen']['tmp_name'];
-      $nombreImagen = $_FILES['imagen']['name'];
-
-      // Directorio donde se guardarán las imágenes (asegúrate de tener los permisos adecuados)
-      $directorioDestino = '../img/Usuarios/';
-
-      // Validar que el archivo sea una imagen y tenga un formato permitido
-      $formatosPermitidos = array('jpg', 'jpeg', 'png', 'gif');
-      $extension = strtolower(pathinfo($nombreImagen, PATHINFO_EXTENSION));
-      if (!in_array($extension, $formatosPermitidos)) {
-        echo "<script> alert ('ERROR: Solo se permiten imágenes en formato JPG, JPEG, PNG o GIF.'); </script>";
-      } else {
-        // Mover el archivo cargado al directorio de destino
-        $rutaCompleta = $directorioDestino . $nombreImagen;
-        if (move_uploaded_file($nombreTemporal, $rutaCompleta)) {
-          // Aquí, en lugar de guardar la imagen directamente en la base de datos,
-          // guardamos solo la ruta relativa en la base de datos
-          $Imagen = '../img/Usuarios/' . $nombreImagen;
-
-          if ($Contraseña == $ConfirmarC) {
-            // Validar la fortaleza de la contraseña (por ejemplo, longitud mínima y caracteres especiales)
-            if (strlen($Contraseña) < 8 || !preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $Contraseña)) {
-              echo "<script> alert ('ERROR: La contraseña debe tener al menos 8 caracteres y contener letras y números.'); </script>";
-            } else {
-              $query = "INSERT INTO usuarios (Nombre, `Primer Apellido`, `Segundo apellido`, Identificacion, Correo, Sexo, `Fecha de nacimiento`, Alergias, Tratamiento, `Estado civil`, Contraseña, Imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-              $Sentencia = mysqli_prepare($ObtenerConexion, $query);
-              mysqli_stmt_bind_param($Sentencia, "ssssssssssss", $Nombre, $PrimerApellido, $SegundoApellido, $Identificacion, $Correo, $Sexo, $Nacimiento, $Alergias, $Tratamiento, $EstadoCivil, $Contraseña, $Imagen);
-              mysqli_stmt_execute($Sentencia);
-              $Afectado = mysqli_stmt_affected_rows($Sentencia);
-              if ($Afectado == 1) {
-                echo "<script> alert ('El usuario $Nombre se creó correctamente'); location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
-              } else {
-                echo "<script> alert ('ERROR: El usuario $Nombre no se creó correctamente'); location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
-              }
-              mysqli_stmt_close($Sentencia);
-              mysqli_close($ObtenerConexion);
-            }
-          } else {
-            echo "<script> alert ('ERROR: Las contraseñas indicadas no coinciden, favor valide estos datos y cree su usuario');</script>";
-          }
-        } else {
-          echo "<script> alert ('Error al mover el archivo al directorio de destino.'); </script>";
-        }
-      }
-    } else {
-      echo "<script> alert ('ERROR: Por favor, seleccione una imagen.'); </script>";
-    }
-  }
-}
-
-if (isset($_POST["Volver"])) {
-  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/LoginUsuarios.php'; </script>";
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -178,7 +96,88 @@ if (isset($_POST["Volver"])) {
           </div>
         </div>
       </nav>
-</header>
+  </header>
+
+  <?php
+include("ConexionBD.php");
+$ObtenerBD = new ConectarBD();
+$ObtenerConexion = $ObtenerBD->conex();
+
+if (isset($_POST["CrearUsuario"])) {
+  $Nombre = $_POST["nombre"];
+  $PrimerApellido = $_POST["PrimerApellido"];
+  $SegundoApellido = $_POST["SegundoApellido"];
+  $Identificacion = $_POST["Identificacion"];
+  $Correo = $_POST["Correo"];
+  $Sexo = $_POST["sexo"];
+  $Nacimiento = $_POST["nacimiento"];
+  $Alergias = $_POST["Alergias"];
+  $Tratamiento = $_POST["tratamiento"];
+  $EstadoCivil = $_POST["EstadoCivil"];
+  $Contraseña = $_POST["Contraseña"];
+  $ConfirmarC = $_POST["ConfimarContraseña"];
+
+  // Validar que los campos obligatorios estén completos
+  if (empty($Nombre) || empty($PrimerApellido) || empty($Identificacion) || empty($Correo) || empty($Contraseña) || empty($ConfirmarC)) {
+    echo "<script> alert ('ERROR: Por favor, complete todos los campos obligatorios.'); </script>";
+  } else {
+    // Verificar si se ha enviado un archivo
+    if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
+      $nombreTemporal = $_FILES['imagen']['tmp_name'];
+      $nombreImagen = $_FILES['imagen']['name'];
+
+      // Directorio donde se guardarán las imágenes (asegúrate de tener los permisos adecuados)
+      $directorioDestino = '../img/Usuarios/';
+
+      // Validar que el archivo sea una imagen y tenga un formato permitido
+      $formatosPermitidos = array('jpg', 'jpeg', 'png', 'gif');
+      $extension = strtolower(pathinfo($nombreImagen, PATHINFO_EXTENSION));
+      if (!in_array($extension, $formatosPermitidos)) {
+        echo "<script> alert ('ERROR: Solo se permiten imágenes en formato JPG, JPEG, PNG o GIF.'); </script>";
+      } else {
+        // Mover el archivo cargado al directorio de destino
+        $rutaCompleta = $directorioDestino . $nombreImagen;
+        if (move_uploaded_file($nombreTemporal, $rutaCompleta)) {
+          // Aquí, en lugar de guardar la imagen directamente en la base de datos,
+          // guardamos solo la ruta relativa en la base de datos
+          $Imagen = '../img/Usuarios/' . $nombreImagen;
+
+          if ($Contraseña == $ConfirmarC) {
+            // Validar la fortaleza de la contraseña (por ejemplo, longitud mínima y caracteres especiales)
+            if (strlen($Contraseña) < 8 || !preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $Contraseña)) {
+              echo "<script> alert ('ERROR: La contraseña debe tener al menos 8 caracteres y contener letras y números.'); </script>";
+            } else {
+              $query = "INSERT INTO usuarios (Nombre, `Primer Apellido`, `Segundo apellido`, Identificacion, Correo, Sexo, `Fecha de nacimiento`, Alergias, Tratamiento, `Estado civil`, Contraseña, Imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+              $Sentencia = mysqli_prepare($ObtenerConexion, $query);
+              mysqli_stmt_bind_param($Sentencia, "ssssssssssss", $Nombre, $PrimerApellido, $SegundoApellido, $Identificacion, $Correo, $Sexo, $Nacimiento, $Alergias, $Tratamiento, $EstadoCivil, $Contraseña, $Imagen);
+              mysqli_stmt_execute($Sentencia);
+              $Afectado = mysqli_stmt_affected_rows($Sentencia);
+              if ($Afectado == 1) {
+                echo "<script> alert ('El usuario $Nombre se creó correctamente'); location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
+              } else {
+                echo "<script> alert ('ERROR: El usuario $Nombre no se creó correctamente'); location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
+              }
+              mysqli_stmt_close($Sentencia);
+              mysqli_close($ObtenerConexion);
+            }
+          } else {
+            echo "<script> alert ('ERROR: Las contraseñas indicadas no coinciden, favor valide estos datos y cree su usuario');</script>";
+          }
+        } else {
+          echo "<script> alert ('Error al mover el archivo al directorio de destino.'); </script>";
+        }
+      }
+    } else {
+      echo "<script> alert ('ERROR: Por favor, seleccione una imagen.'); </script>";
+    }
+  }
+}
+
+if (isset($_POST["Volver"])) {
+  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/LoginUsuarios.php'; </script>";
+}
+?>
+
   <!--Contenido------>
   <main class="my-4 container text-center">
     <section class="row justify-content-center">
@@ -338,7 +337,7 @@ if (isset($_POST["Volver"])) {
               <div class="card-body">
                 <div class="form-group">
                   <label for="EstadoCivil">Estado Civil</label>
-                  <select name="EstadoCivil" id="EstadoCivil" class="form-select">
+                    <select name="EstadoCivil" id="EstadoCivil" class="form-select">
                       <option value="Casado">Casado</option>
                       <option value="Soltero">Soltero</option>
                       <option value="Union Libre">Union Libre</option>

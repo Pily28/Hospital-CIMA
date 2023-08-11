@@ -1,27 +1,3 @@
-<?php
-include("ConexionBD.php");
-$ObtenerBD = new ConectarBD();
-$ObtenerConexion = $ObtenerBD->conex();
-if (isset($_POST["Registrarse"])) {
-  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/CrearColaborador.php'; </script>";
-} 
-if (isset($_POST["IniciarSesion"])) {
-  $Usuario = $_POST["Usuario"];
-  $Contraseña = $_POST["Contraseña"];
-
-  $sql = "SELECT Usuario, Contraseña FROM colaboradores WHERE Usuario = '$Usuario' and Contraseña = '$Contraseña'";
-  $result = $ObtenerConexion->query($sql);
-
-  if ($result->num_rows == 1){
-    header("Location: ../index.html");
-    exit();
-  } else {
-    echo "<script> alert ('ERROR: El usuario y la contraseña no coinciden');</script>";
-  }
-  mysqli_close($ObtenerConexion);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -38,9 +14,9 @@ if (isset($_POST["IniciarSesion"])) {
     <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
     <!-- Stylesheets -->
     </head>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="css/Login.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/Login.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -134,6 +110,21 @@ $ObtenerConexion = $ObtenerBD->conex();
 if (isset($_POST["Registrarse"])) {
   echo "<script> location.href='/Proyecto%20Progra%20III/src/database/CrearColaborador.php'; </script>";
 } 
+if (isset($_POST["IniciarSesion"])) {
+  $Usuario = $_POST["Usuario"];
+  $Contraseña = $_POST["Contraseña"];
+
+  $sql = "SELECT Usuario, Contraseña FROM colaboradores WHERE Usuario = '$Usuario' and Contraseña = '$Contraseña'";
+  $result = $ObtenerConexion->query($sql);
+
+  if ($result->num_rows == 1){
+    header("Location: ../InterfazColaborador.html");
+    exit();
+  } else {
+    echo "<script> alert ('ERROR: El usuario y la contraseña no coinciden');</script>";
+  }
+  mysqli_close($ObtenerConexion);
+}
 ?>
 
 

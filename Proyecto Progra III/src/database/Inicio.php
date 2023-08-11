@@ -1,33 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hospital CIMA</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Hospital CIMA, Salud, Ambulacia privada"
+  />
+  <meta name="keywords" content="salud, citas, Citas en linea" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/Inicio.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+</head>
+
+<body>
 <?php
 session_start();
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hospital CIMA</title>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hospital CIMA, Salud, Ambulacia privada"
-    />
-    <meta name="keywords" content="salud, citas, Citas en linea" />
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/Inicio.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
   
     <!-- Header -->
     <header class="fixed-fluid">
@@ -93,16 +93,19 @@ session_start();
             
           </div>
           <div class="user-info">
-            <div class="profile-picture">
-              <img src="<?php echo $_SESSION["imagen"]; ?>" alt="Imagen de perfil" id="profile-img">
-              <ul class="options-list" id="options-list">
-                <li><a class="dropdown-item" href="Actualizar_Contrasena.php">Actualizar Información de usuario</a></li>
-                <li><a class="dropdown-item" href="Cambio_Contrasena.php">Cambiar Contraseña</a></li>
-                <li><a class="dropdown-item" href="CerrarSesion.php">Cerrar Sesion</a>
-              </li>
-              </ul>
-            </div>
             <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>
+            </div>
+              <div class="profile-picture">
+                <img src="<?php echo $_SESSION["imagen"]; ?>" alt="Imagen de perfil" id="profile-img">
+                <ul class="options-list" id="options-list">
+                  <li><a class="dropdown-item" href="ActualizarUsuario.php">Actualizar Información de usuario</a></li>
+                  <li><a class="dropdown-item" href="CambioContrasena.php">Cambiar Contraseña</a></li>
+                  <li><a class="dropdown-item" href="ExpedienteDigital.php">Expediente Digital</a></li>
+                  <li><a class="dropdown-item" href="CerrarSesion.php">Cerrar Sesion</a>
+                </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </nav>

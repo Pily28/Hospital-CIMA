@@ -13,9 +13,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="css/LoginUsuarios.css" />
+    <link rel="stylesheet" href="../css/Citas.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,130 +24,88 @@
     />
   </head>
 
-
-
-
   <body>
-<!---Cabecera------------------->
-<header class="fixed-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">CIMA</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar-content"
-          aria-controls="navbar-content"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbar-content"
-        >
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
-                >Inicio</a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle active"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Trámites
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a class="dropdown-item" href="./Registro.php">Registros</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./LoginColaboradores.php"
-                    >Área Administrativa</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./LoginUsuarios.php"
-                    >Login Usuarios</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="../contacto.html"
-                >Contacto</a
-              >
-            </li>
-          </ul>
+    <!-- Header -->
+    <header class="fixed-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="Inicio.php">CIMA</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-content"
+            aria-controls="navbar-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbar-content"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Inicio.php"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Trámites
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="Registro.php">Registros</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="LoginColaboradores.php">Área Administrativa</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="LoginUsuarios.php">Login Usuarios</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./contacto.html"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-<!-------Contenido---------------------->
-<main>
-    <section class="login-form">
-      <div class="container-fluid main-container">
-        <div class="d-flex align-items-center justify-content-center vh-100">
-          <form class="container col-lg-4 col-md-6 col-sm-8 col-10">
-            <h2 class="mb-4">Iniciar sesión</h2>
-            <div class="form-group">
-              <label for="username">Nombre de usuario</label>
-              <input
-                type="text"
-                class="form-control"
-                id="username"
-                placeholder="Ingrese su nombre de usuario"
-              />
-            </div>
-            <div class="form-group mt-3">
-              <label for="password">Contraseña</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Ingrese su contraseña"
-              />
-            </div>
-            <div class="buttons mt-4">
-              <button type="submit" class="btn btn-primary me-2">
-                Iniciar sesión
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="btn-register"
-                onclick="redirigir()"
-              >
-                Registrarse
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-</main>
 
+  <div class="containerh1">
+    <h1 class="title">Solicite su cita por alguno de los siguientes medios </h1>
+    <div class="box">Llame al: 2256-3975</div>
+    <div class="box">Whatsapp 7809-0927</div>
+    <div class="box">cita.medica@hospitalcima.com</div>
+  </div>
+</body>
+</html>
   <!-----Pie de pagina-------->
   <footer class="pt-4 pt-md-5 border-top">
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-3">
-              <img class="mb-2" src="img/health-and-care.png" alt="" />
+              <img class="mb-2" src="../img/health-and-care.png" alt="" />
             </div>
             <div class="col-6 col-md-3">
               <h5>Localización</h5>
@@ -176,15 +134,14 @@
         </div>
       </footer>
     <!-- JavaScript -->
-    <script src="js/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/modernizr-3.11.2.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <script src="js/LoginUsuarios.js"></script>
   </body>
 </html>

@@ -1,0 +1,35 @@
+/* Estilos para el contenedor principal */
+.containerh1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Agrega un espacio interno de 20px alrededor del contenido */
+    border: 2px solid #333;
+    border-radius: 10px; /* Agrega bordes redondeados */
+    box-shadow: 0 4px 6px rgba(169, 169, 169); /* Agrega sombra al contenedor */
+    max-width: 800px; /* Establece un ancho máximo de 800px */
+    margin: 50px auto 50px; /* Margen superior de 50px y márgenes laterales automáticos */
+    background-color: #f0f0f0;
+  }
+  /* Estilos para el título */
+  .title {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 30px; /* Agrega un espacio inferior de 10px */
+  }
+  /* Estilos para los cuadros de colores */
+  .box {
+    font-family: Arial, sans-serif;
+    background-color: #008B8B; /* Establece el color de fondo de los cuadros */
+    color: white; /* Color del texto dentro de los cuadros */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Establece la altura de los cuadros */
+    margin-bottom: 15px; /* Agrega un espacio inferior de 15px */
+    padding: 20px; /* Agrega espacio interno alrededor del contenido */
+    border-radius: 8px; /* Agrega un bordes redondeados */
+    border: 2px solid #333; /* Agrega un borde de 2px sólido de color oscuro */
+    max-width: 400px; /* Establece un ancho máximo de 400px y ocupa todo el ancho disponible */
+    width: 100%;
+  }
