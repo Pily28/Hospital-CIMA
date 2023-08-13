@@ -138,12 +138,11 @@
               
             </table>
           </div>
-          <div class="text-center">
-            <button type="button" id="Volver" class="btn btn-primary"><a  href="../InterfazColaborador.html"></a>
-              Volver
+          <div class="text-end custom-margin">
+            <button type="button" id="Volver" class="btn btn-primary btn-lg">
+                Volver
             </button>
           </div>
-        </div>
       </section>
     </main>
 

@@ -1,28 +1,3 @@
-<?php
-session_start();
-include("ConexionBD.php");
-$ObtenerBD = new ConectarBD();
-$ObtenerConexion = $ObtenerBD->conex();
-
-if (isset($_POST["recuperar"])) {
-  $email = $_POST["email"];
-
-  // Generar una nueva contraseña aleatoria
-  $nueva_contrasena = generar_contrasena_aleatoria(); // Implementa esta función según tus necesidades
-
-  // Actualizar la contraseña en la base de datos y enviarla por correo
-  $sql = "UPDATE usuarios SET password = '$nueva_contrasena' WHERE email = '$email'";
-  if ($conn->query($sql) === TRUE) {
-      enviar_correo($email, $nueva_contrasena); // Implementa esta función según tus necesidades
-      echo "La contraseña se ha reiniciado y se ha enviado al correo proporcionado.";
-  } else {
-      echo "Error al reiniciar la contraseña: ";
-  }
-}
-
-mysqli_close($ObtenerConexion);
-?>
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -40,6 +15,7 @@ mysqli_close($ObtenerConexion);
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/Inicio.css" />
+    <link rel="stylesheet" href="../css/CambiarContraseña.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -48,7 +24,61 @@ mysqli_close($ObtenerConexion);
     />
   </head>
   <body>
+
+  <?php
+    session_start();
+    include("ConexionBD.php");
+    $ObtenerBD = new ConectarBD();
+    $ObtenerConexion = $ObtenerBD->conex();
+
+    $Correo = $_SESSION["Correo"];
+    $destinatario = $Correo;
+
+    function generar_contrasena_aleatoria($longitud = 10) {
+      $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $contrasena = '';
+      $maximoCaracteres = strlen($caracteres) - 1;
   
+      for ($i = 0; $i < $longitud; $i++) {
+          $indiceAleatorio = mt_rand(0, $maximoCaracteres);
+          $contrasena .= $caracteres[$indiceAleatorio];
+      }
+  
+      return $contrasena;
+  }
+  function enviar_correo($destinatario, $contrasena) {
+    $asunto = "Recuperación de Contraseña";
+    $mensaje = "Su nueva contraseña es: $contrasena";
+    $cabeceras = "From: tu_correo@ejemplo.com" . "\r\n" .
+                 "Reply-To: tu_correo@ejemplo.com" . "\r\n" .
+                 "X-Mailer: PHP/" . phpversion();
+
+    if (mail($destinatario, $asunto, $mensaje, $cabeceras)) {
+        echo "Se ha enviado un correo con la nueva contraseña.";
+    } else {
+        echo "Error al enviar el correo.";
+    }
+}
+
+
+    if (isset($_POST["recuperar"])) {
+
+      // Generar una nueva contraseña aleatoria
+      $nueva_contrasena = generar_contrasena_aleatoria(); // Implementa esta función según tus necesidades
+
+      // Actualizar la contraseña en la base de datos y enviarla por correo
+      $sql = "UPDATE usuarios SET Contraseña = '$nueva_contrasena' WHERE Correo = '$Correo'";
+      if ($ObtenerConexion->query($sql) === TRUE) {
+          enviar_correo($Correo, $nueva_contrasena); // Implementa esta función según tus necesidades
+          echo "La contraseña se ha reiniciado y se ha enviado al correo proporcionado.";
+      } else {
+          echo "Error al reiniciar la contraseña: ";
+      }
+    }
+
+    mysqli_close($ObtenerConexion);
+    ?>
+
     <!-- Header -->
     <header class="fixed-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -69,48 +99,7 @@ mysqli_close($ObtenerConexion);
             class="collapse navbar-collapse justify-content-center"
             id="navbar-content"
           >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Inicio.php"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="database/Registro.php">Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginColaboradores.php">Área Administrativa</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginUsuarios.php">Login Usuarios</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="contacto.html"
-                  >Contacto</a
-                >
-              </li>
-            </ul>
-            
+           
           </div>
           <div class="user-info">
             <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>
@@ -131,14 +120,21 @@ mysqli_close($ObtenerConexion);
       </nav>
     </header>
 
-    </h1>Recuperar contraseña</h1>
-    <form method="post" action="procesar_recuperar.php">
-        <label for="email">Correo electrónico:</label>
-        <input type="email" name="email" id="email" required><br>
 
-        <input type="submit" name="recuperar" value="Recuperar contraseña">
-    </form>
-    
+    <div class="container">
+        <h1>Realice el cambio de su contraseña</h1>
+        <div class="description">
+          <p>Solicita el cambio te tu contraseña por este medio, la misma será enviada a su correo electronico y será una contraseña aleatoria</p>
+        </div>
+        <form method="post" action="">
+          <label for="Correo">Correo Electrónico:</label>
+          <input type="email" name="Correo" id="Correo" value="<?php echo $_SESSION["Correo"]; ?>" readonly>
+
+          <div class="text-center">
+              <button class="btn btn-primary" type="submit" name="recuperar" id="btnCambiar">Recuperar Contraseña</button>
+          </div>
+        </form>
+    </div>
 
     <!-- Footer -->
     <footer class="pt-4 pt-md-5 border-top">

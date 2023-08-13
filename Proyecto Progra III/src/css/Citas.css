@@ -20,7 +20,7 @@
   /* Estilos para los cuadros de colores */
   .box {
     font-family: Arial, sans-serif;
-    background-color: #008B8B; /* Establece el color de fondo de los cuadros */
+    background-color: #176B87; /* Establece el color de fondo de los cuadros */
     color: white; /* Color del texto dentro de los cuadros */
     display: flex;
     justify-content: center;

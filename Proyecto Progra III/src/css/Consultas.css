@@ -9,3 +9,15 @@
     color: black;
     line-height: 1.4;
 }
+
+.custom-margin {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* Estilos para el botón */
+.btn-primary.btn-lg {
+    font-size: 24px;
+    padding: 15px 30px; 
+}
+

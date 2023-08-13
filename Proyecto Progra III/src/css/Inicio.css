@@ -52,3 +52,11 @@
     float: right;
     text-align: center;
   }
+
+
+.description p {
+  margin-top: 40px;
+  font-size: 30px;
+  color: black;
+  line-height: 1.4;
+}

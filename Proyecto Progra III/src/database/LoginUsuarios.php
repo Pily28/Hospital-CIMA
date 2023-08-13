@@ -1,44 +1,3 @@
-<?php
-session_start();// Iniciar la sesión antes de usar las variables de sesión
-
-include("ConexionBD.php");
-$ObtenerBD = new ConectarBD();
-$ObtenerConexion = $ObtenerBD->conex();
-if (isset($_POST["Registrarse"])) {
-  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
-
-}
-if (isset($_POST["IniciarSesion"])) {
-  $Usuario = $_POST["Usuario"];
-  $Contraseña = $_POST["Contraseña"];
-
-  $sql = "SELECT Nombre, `Primer Apellido`, `Segundo Apellido`, Identificacion, Correo, Sexo, `Fecha de nacimiento`, Alergias, Tratamiento, `Estado Civil`, Contraseña , imagen FROM usuarios WHERE Identificacion = '$Usuario' and Contraseña = '$Contraseña'";
-  $result = $ObtenerConexion->query($sql);
-
-  if ($result->num_rows == 1){
-    $row = $result->fetch_assoc();
-    $_SESSION["Nombre"] = $row["Nombre"];
-    $_SESSION["Primer Apellido"] = $row["Primer Apellido"];
-    $_SESSION["Segundo Apellido"] = $row["Segundo Apellido"];
-    $_SESSION["Identificacion"] = $row["Identificacion"];
-    $_SESSION["Correo"] = $row["Correo"];
-    $_SESSION["Sexo"] = $row["Sexo"];
-    $_SESSION["Fecha de nacimiento"] = $row["Fecha de nacimiento"];
-    $_SESSION["Alergias"] = $row["Alergias"];
-    $_SESSION["Tratamiento"] = $row["Tratamiento"];
-    $_SESSION["Estado Civil"] = $row["Estado Civil"];
-    $_SESSION["Contraseña"] = $row["Contraseña"];
-    $_SESSION["imagen"] = $row["imagen"];
-    
-    header("Location: Inicio.php");
-    exit();
-  } else {
-    echo "<script> alert ('ERROR: El usuario y la contraseña no coinciden');</script>";
-  }
-  mysqli_close($ObtenerConexion);
-} 
-?>
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -54,9 +13,9 @@ if (isset($_POST["IniciarSesion"])) {
     <!-- Favicon -->
     <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="css/Login.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/Login.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -136,6 +95,47 @@ if (isset($_POST["IniciarSesion"])) {
       </div>
     </nav>
   </header>
+
+<?php
+session_start();// Iniciar la sesión antes de usar las variables de sesión
+
+include("ConexionBD.php");
+$ObtenerBD = new ConectarBD();
+$ObtenerConexion = $ObtenerBD->conex();
+if (isset($_POST["Registrarse"])) {
+  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
+
+}
+if (isset($_POST["IniciarSesion"])) {
+  $Usuario = $_POST["Usuario"];
+  $Contraseña = $_POST["Contraseña"];
+
+  $sql = "SELECT Nombre, `Primer Apellido`, `Segundo Apellido`, Identificacion, Correo, Sexo, `Fecha de nacimiento`, Alergias, Tratamiento, `Estado Civil`, Contraseña , imagen FROM usuarios WHERE Identificacion = '$Usuario' and Contraseña = '$Contraseña'";
+  $result = $ObtenerConexion->query($sql);
+
+  if ($result->num_rows == 1){
+    $row = $result->fetch_assoc();
+    $_SESSION["Nombre"] = $row["Nombre"];
+    $_SESSION["Primer Apellido"] = $row["Primer Apellido"];
+    $_SESSION["Segundo Apellido"] = $row["Segundo Apellido"];
+    $_SESSION["Identificacion"] = $row["Identificacion"];
+    $_SESSION["Correo"] = $row["Correo"];
+    $_SESSION["Sexo"] = $row["Sexo"];
+    $_SESSION["Fecha de nacimiento"] = $row["Fecha de nacimiento"];
+    $_SESSION["Alergias"] = $row["Alergias"];
+    $_SESSION["Tratamiento"] = $row["Tratamiento"];
+    $_SESSION["Estado Civil"] = $row["Estado Civil"];
+    $_SESSION["Contraseña"] = $row["Contraseña"];
+    $_SESSION["imagen"] = $row["imagen"];
+    
+    header("Location: Inicio.php");
+    exit();
+  } else {
+    echo "<script> alert ('ERROR: El usuario y la contraseña no coinciden');</script>";
+  }
+  mysqli_close($ObtenerConexion);
+} 
+?>
 
 
   <!--Contenido-------------------------->

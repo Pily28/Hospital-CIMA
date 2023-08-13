@@ -30,6 +30,32 @@
  
   <body>
 
+
+    <!--Cabece de la pagina-->
+    <header class="fixed-fluid">
+      <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">CIMA</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-content"
+            aria-controls="navbar-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbar-content"
+          >
+          </div>
+        </div>
+      </nav>
+    </header>
+
 <?php
 include("ConexionBD.php");
 $ObtenerBD = new ConectarBD();
@@ -47,12 +73,6 @@ if (isset($_POST["Registrar"])) {
   $Doctor = $_POST["Doctor"];
   $TipoCita = $_POST["Tipo"];
   $Observaciones = $_POST["Observaciones"];
-
-  include("ConexionBD.php");
-$ObtenerBD = new ConectarBD();
-$ObtenerConexion = $ObtenerBD->conex();
-
-
 
   // Validar que los campos obligatorios estén completos
   if (empty($Nombre) || empty($PrimerApellido) || empty($Identificacion) || empty($Correo) || empty($Fecha) || empty($Hora) || empty($Doctor) || empty($Sede) || empty($Observaciones)) {
@@ -74,13 +94,13 @@ $ObtenerConexion = $ObtenerBD->conex();
 }
   
 if (isset($_POST["Salir"])) {
-  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/Inicio.php'; </script>";
+  echo "<script> location.href='../InterfazColaborador.html'; </script>";
 }
 
 if (isset($_POST["Buscar"])) {
   $cedula = $_POST["Identificacion"];
 
-  $sql = "SELECT Nombre, `Primer Apellido`, `Segundo apellido` FROM usuarios WHERE Identificacion = '$cedula'";
+  $sql = "SELECT Nombre, `Primer Apellido`, `Segundo apellido`, Correo , Identificacion FROM usuarios WHERE Identificacion = $cedula";
   $result = mysqli_query($ObtenerConexion, $sql);
 
   if ($result) {
@@ -88,9 +108,11 @@ if (isset($_POST["Buscar"])) {
       $row = mysqli_fetch_assoc($result);
       $response = array(
         "success" => true,
-        "nombre" => $row["Nombre"],
-        "primerApellido" => $row["Primer Apellido"],
-        "segundoApellido" => $row["Segundo apellido"]
+        "Nombre" => $row["Nombre"],
+        "PrimerApellido" => $row["Primer Apellido"],
+        "SegundoApellido" => $row["Segundo apellido"],
+        "Correo" => $row["Correo"],
+        "Identificacion" => $row["Identificacion"]
       );
     } else {
       $response = array("success" => false);
@@ -98,82 +120,31 @@ if (isset($_POST["Buscar"])) {
   } else {
     $response = array("success" => false);
   }
+  
 }
 ?>
-    <!--Cabece de la pagina-->
-    <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">CIMA</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar-content"
-            aria-controls="navbar-content"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbar-content"
-          >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="Registro.html">Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="SeccionUsuario.html"
-                      >Área Administrativa</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="LoginUsarios.html"
-                      >Login Usuarios</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="contacto.html"
-                  >Contacto</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
 
 <!--Contenido de la pagina-->
 <main>
     <section class="container py-5">
-      <form class="col-md-6 col-lg-10" action="" method="POST">
+    <h1>Registro para citas de pacientes</h1>
+      <div class="description">
+        <p>Registre las citas realizadas en el sistema por medio del siguiente formulario, indique el numero de cédula del paciente y proceda a agregar los datos de la cita realizada y envie los datos.</p>
+      </div>
+      <form class="col-md-6 col-lg-10 mx-auto" action="" method="POST">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="form-group mb-3">
+                <label for="Identificacion">Número de Identificación:</label>
+                <input type="text" name="Identificacion" id="Identificacion" placeholder="Ingrese el ID del paciente" value="<?php echo isset($response['Identificacion']) ? $response['Identificacion'] : ''; ?>">
+                <button type="submit" class="btn custom-btn" name="Buscar">Buscar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="row justify-content-center">
           <!-- Card 1 -->
           <div class="col-md-4">
@@ -181,7 +152,7 @@ if (isset($_POST["Buscar"])) {
               <div class="card-body">
                 <div class="form-group mb-3">
                   <label for="Nombre">Nombre</label>
-                  <input type="text" id="Nombre" name="Nombre" class="form-control" placeholder="Ingrese el nombre del paciente" />
+                  <input type="text" id="Nombre" name="Nombre" class="form-control" value="<?php echo isset($response['Nombre']) ? $response['Nombre'] : ''; ?>" readonly/>
                 </div>
               </div>
             </div>
@@ -193,7 +164,7 @@ if (isset($_POST["Buscar"])) {
               <div class="card-body">
                 <div class="form-group mb-3">
                   <label for="PrimerApellido">Primer Apellido</label>
-                  <input type="text" id="PrimerApellido" name="PrimerApellido" class="form-control" placeholder="Ingrese el primer apellido del paciente"/>
+                  <input type="text" id="PrimerApellido" name="PrimerApellido" class="form-control" value="<?php echo isset($response['PrimerApellido']) ? $response['PrimerApellido'] : ''; ?>" readonly/>
                 </div>
               </div>
             </div>
@@ -205,30 +176,18 @@ if (isset($_POST["Buscar"])) {
               <div class="card-body">
                 <div class="form-group mb-3">
                   <label for="SegundoApellido">Segundo Apellido</label>
-                  <input type="text" id="SegundoApellido" name="SegundoApellido" class="form-control" placeholder="Ingrese el segundo apellido del paciente" />
+                  <input type="text" id="SegundoApellido" name="SegundoApellido" class="form-control" value="<?php echo isset($response['SegundoApellido']) ? $response['SegundoApellido'] : ''; ?>" readonly/>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         <div class="row justify-content-center">
           <div class="col-md-4">
             <div class="card mb-4">
               <div class="card-body">
                 <div class="form-group mb-3">
-                <label for="Identificacion">Número de Identificación:</label>
-                <input type="text" name="Identificacion" id="Identificacion" placeholder="Ingrese el ID del paciente">
-                <button type="submit" class="btn btn-primary" name="Buscar">Buscar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="form-group mb-3">
                   <label for="Correo">Correo Electronico</label>
-                  <input type="text" id="Correo" name="Correo" class="form-control" placeholder="Ejemplo: paciente@gmail.com"/>
+                  <input type="text" id="Correo" name="Correo" class="form-control" value="<?php echo isset($response['Correo']) ? $response['Correo'] : ''; ?>" readonly/>
                 </div>
               </div>
             </div>
@@ -243,18 +202,18 @@ if (isset($_POST["Buscar"])) {
               </div>
             </div>
           </div>
-        </div>
-        <div class="row justify-content-center">
           <div class="col-md-4">
             <div class="card mb-4">
               <div class="card-body">
                 <div class="form-group mb-3">
                   <label for="Hora">Hora:</label>
-                  <input type="time" id="Hora" name="Hora">
+                  <input type="time" id="Hora" name="Hora" class="form-control">
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="row justify-content-center">  
           <div class="col-md-4">
             <div class="card mb-4">
               <div class="card-body">
@@ -279,22 +238,22 @@ if (isset($_POST["Buscar"])) {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <div class="card-body">
-                  <div class="form-group mb-3">
-                    <label for="Tipo">Tipo de cita</label>
-                    <select name="Tipo" id="Tipo" class="form-select">
-                      <option value="Cita de Control">Cita de Control</option>
-                      <option value="Cita Preoperatoria">Cita Preoperatoria</option>
-                      <option value="Cita de emergencia">Cita de emergencia</option>
-                      <option value="Otro">Otro</option>
-                    </select>
-                  </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="form-group mb-3">
+                  <label for="Tipo">Tipo de cita</label>
+                  <select name="Tipo" id="Tipo" class="form-select">
+                    <option value="Cita de Control">Cita de Control</option>
+                    <option value="Cita Preoperatoria">Cita Preoperatoria</option>
+                    <option value="Cita de emergencia">Cita de emergencia</option>
+                    <option value="Otro">Otro</option>
+                  </select>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="row justify-content-center">
             <div class="col-md-4">
               <div class="card mb-4">
                 <div class="card-body">
@@ -313,7 +272,7 @@ if (isset($_POST["Buscar"])) {
                   <button type="submit" class="btn btn-primary btn-lg" name="Registrar">Registrar</button>
                 </div>
                 <div class="cancelar-btn">
-                  <button class="btn btn-primary" name="Salir">Salir</button>
+                  <button class="btn btn-primary btn-lg" name="Salir">Salir</button>
                 </div>
               </div>
             </div>

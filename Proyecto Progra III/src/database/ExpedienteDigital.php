@@ -85,15 +85,25 @@ session_start();
       </nav>
     </header>
 
+    <?php
+    include("ConexionBD.php");
+    $ObtenerBD = new ConectarBD();
+    $ObtenerConexion = $ObtenerBD->conex();
+    
+    $Nombre = $_SESSION["Nombre"];
+    $Usuario = $_SESSION["Identificacion"];
+
+    $sql = "SELECT Nombre, `Primer Apellido`, `Segundo apellido`, Cedula, Correo, Fecha, Hora, Sede, Doctor, `Tipo de cita`, Observaciones FROM registrocitas WHERE Cedula LIKE $Usuario ";
+    $result = $ObtenerConexion->query($sql);
+    ?>
+
     <main class="my-4 container text-center">
+  
+      <a href="generar_pdf.php" target="_blank" class="btn btn-primary btn-lg float-end">Imprimir PDF</a>
       <section class="row justify-content-center">
         <h2>Expediente Digital</h2>
-        <div class="col-md-6 col-lg-4">
-          <div class="row">
-            <div class="col">
-            <h4 class="text-center mb-4">Bienvenido</h4>
-            </div>
-          </div>
+        <div class="description">
+          <p>Bienvenido, aquí podra ver su expediente de citas y comentarios realizados por sus doctores.</p>
         </div>
       </section>
       <section>
@@ -102,9 +112,11 @@ session_start();
           <div class="table-responsive">
             <table class="table table-bordered">
               <thead>
+                
                 <tr>
                   <th>Nombre</th>
-                  <th>Apellidos</th>
+                  <th>Primer Apellido</th>
+                  <th>Segundo Apellido</th>
                   <th>Cédula</th>
                   <th>Correo</th>
                   <th>Fecha</th>
@@ -117,7 +129,27 @@ session_start();
                 </tr>
               </thead>
               <tbody>
-                <tr></tr>
+                <?php
+                  if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["Nombre"] . "</td>";
+                    echo "<td>" . $row["Primer Apellido"] . "</td>";
+                    echo "<td>" . $row["Segundo apellido"] . "</td>";
+                    echo "<td>" . $row["Cedula"] . "</td>";
+                    echo "<td>" . $row["Correo"] . "</td>";
+                    echo "<td>" . $row["Fecha"] . "</td>";
+                    echo "<td>" . $row["Hora"] . "</td>";
+                    echo "<td>" . $row["Sede"] . "</td>";
+                    echo "<td>" . $row["Doctor"] . "</td>";
+                    echo "<td>" . $row["Tipo de cita"] . "</td>";
+                    echo "<td>" . $row["Observaciones"] . "</td>";
+                    echo "</tr>";
+                    }
+                  } else {
+                    echo "<tr><td colspan='11'>No se encontraron datos.</td></tr>";
+                  }
+                  ?>
               </tbody>
             </table>
           </div>
