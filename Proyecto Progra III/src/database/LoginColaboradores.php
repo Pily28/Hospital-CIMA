@@ -107,9 +107,6 @@
 include("ConexionBD.php");
 $ObtenerBD = new ConectarBD();
 $ObtenerConexion = $ObtenerBD->conex();
-if (isset($_POST["Registrarse"])) {
-  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/CrearColaborador.php'; </script>";
-} 
 if (isset($_POST["IniciarSesion"])) {
   $Usuario = $_POST["Usuario"];
   $Contraseña = $_POST["Contraseña"];
@@ -158,13 +155,6 @@ if (isset($_POST["IniciarSesion"])) {
             <div class="buttons mt-4">
               <button type="submit" class="btn btn-primary me-2" name="IniciarSesion">
                 Iniciar sesión
-              </button>
-              <button
-                type="submit"
-                class="btn btn-primary"
-                name="Registrarse"
-              >
-                Registrarse
               </button>
             </div>
           </form>
