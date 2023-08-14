@@ -11,7 +11,7 @@
     />
     <meta name="keywords" content="salud, citas, Citas en linea" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
+    <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/main.css" />
@@ -23,7 +23,7 @@
       crossorigin="anonymous"
 
     />
-    <link rel="stylesheet" href="/css/Registro.css" />
+    <link rel="stylesheet" href="../css/Registro.css" />
   </head>
 
 
@@ -32,7 +32,7 @@
   <header class="fixed-fluid">
       <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
         <div class="container">
-          <a class="navbar-brand" href="index.html">CIMA</a>
+          <a class="navbar-brand" href="../index.html">CIMA</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -48,57 +48,11 @@
             class="collapse navbar-collapse justify-content-center"
             id="navbar-content"
           >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="./Registro.php">Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./LoginColaboradores.php"
-                      >Área Administrativa</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="./LoginUsuarios.php"
-                      >Login Usuarios</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="../contacto.html7"
-                  >Contacto</a
-                >
-              </li>
-            </ul>
-          </div>
         </div>
       </nav>
   </header>
 
-  <?php
+<?php
 include("ConexionBD.php");
 $ObtenerBD = new ConectarBD();
 $ObtenerConexion = $ObtenerBD->conex();
@@ -153,9 +107,9 @@ if (isset($_POST["CrearUsuario"])) {
               mysqli_stmt_execute($Sentencia);
               $Afectado = mysqli_stmt_affected_rows($Sentencia);
               if ($Afectado == 1) {
-                echo "<script> alert ('El usuario $Nombre se creó correctamente'); location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
+                echo "<script> alert ('El usuario $Nombre se creó correctamente'); location.href='Registro.php'; </script>";
               } else {
-                echo "<script> alert ('ERROR: El usuario $Nombre no se creó correctamente'); location.href='/Proyecto%20Progra%20III/src/database/Registro.php'; </script>";
+                echo "<script> alert ('ERROR: El usuario $Nombre no se creó correctamente'); location.href='Registro.php'; </script>";
               }
               mysqli_stmt_close($Sentencia);
               mysqli_close($ObtenerConexion);
@@ -174,7 +128,7 @@ if (isset($_POST["CrearUsuario"])) {
 }
 
 if (isset($_POST["Volver"])) {
-  echo "<script> location.href='/Proyecto%20Progra%20III/src/database/LoginUsuarios.php'; </script>";
+  echo "<script> location.href='LoginUsuarios.php'; </script>";
 }
 ?>
 

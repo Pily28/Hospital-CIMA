@@ -11,7 +11,7 @@
     />
     <meta name="keywords" content="salud, citas, Citas en linea" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
+    <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
 
     <link
@@ -28,7 +28,7 @@
     <header class="fixed-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-          <a class="navbar-brand" href="index.html">CIMA</a>
+          <a class="navbar-brand" href="../index.html">CIMA</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -44,50 +44,47 @@
             class="collapse navbar-collapse justify-content-center"
             id="navbar-content"
           >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="Registro.html">Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="SeccionUsuario.html"
-                      >Área Administrativa</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="LoginUsarios.html"
-                      >Login Usuarios</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="contacto.html"
-                  >Contacto</a
-                >
-              </li>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Trámites
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="LoginColaboradores.php"
+                    >Área Administrativa</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="LoginUsuarios.php"
+                    >Login Usuarios</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="contacto.php"
+                >Contacto</a
+              >
+            </li>
             </ul>
           </div>
         </div>
@@ -101,7 +98,7 @@
         $email = $_POST["email"];
         $mensaje = $_POST["mensaje"];
         
-        $destinatario = "hospitalcima.servicioalcliente@gmail.com"; // Cambia esto al correo de destino
+        $destinatario = "hospitalcima.servicioalcliente@gmail.com"; // Correo de destino
         
         $asunto = "Nuevo mensaje desde el formulario del sitio web";
         
@@ -188,9 +185,9 @@
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
             <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="./Sede.Belen.html">Belen</a></li>
-              <li><a class="text-muted" href="./Sede-Escazu.html">Escazu</a></li>
-              <li><a class="text-muted" href="./Sede-SanPedro.html">San Pedro</a></li>
+              <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+              <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
@@ -212,15 +209,15 @@
       </div>
     </footer>
     <!-- JavaScript -->
-    <script src="js/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/modernizr-3.11.2.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <script src="js/LoginUsuarios.js"></script>
+    <script src="../js/LoginUsuarios.js"></script>
   </body>
 </html>

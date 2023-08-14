@@ -11,12 +11,7 @@
     <meta name="keywords" content="salud, citas, Citas en línea" />
     <title>Hospital CIMA</title>
     <!-- Favicon -->
-    <link rel="manifest" href="/site.webmanifest" />
-    <link
-      rel="shortcut icon"
-      href="/css/img/medical-symbol.png"
-      type="image/png"
-    />
+    <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/main.css" />
@@ -168,10 +163,9 @@ session_start();
       <div class="col-6 col-md">
         <h5>Ubicación</h5>
         <ul class="menu list-unstyled text-small">
-          <li><a class="text-muted" href="#">San Ramón</a></li>
-          <li><a class="text-muted" href="#">San Carlos</a></li>
-          <li><a class="text-muted" href="#">Rohrmoser</a></li>
-          <li><a class="text-muted" href="#">Jacó</a></li>
+            <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+            <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+            <li><a class="text-muted" href="../Sede-Escazu.html">San Pedro</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">

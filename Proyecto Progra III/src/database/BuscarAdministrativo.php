@@ -11,12 +11,7 @@
     <meta name="keywords" content="salud, citas, Citas en línea" />
     <title>Hospital CIMA</title>
     <!-- Favicon -->
-    <link rel="manifest" href="/site.webmanifest" />
-    <link
-      rel="shortcut icon"
-      href="/css/img/medical-symbol.png"
-      type="image/png"
-    />
+    <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/Tablas.css" />
     <link rel="stylesheet" href="../css/Consultas.css" />
@@ -33,7 +28,7 @@
     <header class="fixed-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-          <a class="navbar-brand" href="index.html">CIMA</a>
+          <a class="navbar-brand" href="../index.html">CIMA</a>
           <button
             class="navbar-toggler"
             type="button"

@@ -12,7 +12,7 @@
     />
     <meta name="keywords" content="salud, citas, Citas en linea" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
+    <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/main.css" />
@@ -35,7 +35,7 @@
     <header class="fixed-fluid">
       <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
         <div class="container">
-          <a class="navbar-brand" href="index.html">CIMA</a>
+          <a class="navbar-brand" href="../index.php">CIMA</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -292,9 +292,9 @@ if (isset($_POST["Buscar"])) {
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
             <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="./Sede.Belen.html">Belen</a></li>
-              <li><a class="text-muted" href="./Sede-Escazu.html">Escazu</a></li>
-              <li><a class="text-muted" href="./Sede-SanPedro.html">San Pedro</a></li>
+              <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+              <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
@@ -317,9 +317,9 @@ if (isset($_POST["Buscar"])) {
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/modernizr-3.11.2.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

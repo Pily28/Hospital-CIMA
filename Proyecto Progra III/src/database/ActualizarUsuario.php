@@ -11,7 +11,7 @@
     />
     <meta name="keywords" content="salud, citas, Citas en linea" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
+    <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/main.css" />

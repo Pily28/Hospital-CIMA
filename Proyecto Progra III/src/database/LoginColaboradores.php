@@ -11,7 +11,7 @@
     />
     <meta name="keywords" content="salud, citas, Citas en linea" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
+    <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     </head>
     <link rel="stylesheet" href="../css/normalize.css" />
@@ -71,9 +71,6 @@
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <a class="dropdown-item" href="./Registro.php">Registros</a>
-                </li>
-                <li>
                   <a class="dropdown-item" href="./LoginColaboradores.php"
                     >Área Administrativa</a
                   >
@@ -89,7 +86,7 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="contacto.html"
+                href="contacto.php"
                 >Contacto</a
               >
             </li>
@@ -205,6 +202,6 @@ if (isset($_POST["IniciarSesion"])) {
       crossorigin="anonymous"
     ></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <script src="js/Login.js"></script>
+    <script src="../js/Login.js"></script>
   </body>
 </html>

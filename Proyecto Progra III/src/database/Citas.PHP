@@ -11,7 +11,7 @@
     />
     <meta name="keywords" content="salud, citas, Citas en linea" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
+    <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="/css/main.css" />
@@ -110,9 +110,9 @@
             <div class="col-6 col-md-3">
               <h5>Localización</h5>
               <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="./Sede.Belen.html">Belen</a></li>
-                <li><a class="text-muted" href="./Sede-Escazu.html">Escazu</a></li>
-                <li><a class="text-muted" href="./Sede-SanPedro.html">San Pedro</a></li>
+                <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+                <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+                <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
               </ul>
             </div>
             <div class="col-6 col-md-3">
