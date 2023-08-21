@@ -64,13 +64,14 @@ main{
 
 .container-tarjetas {
   margin-top: 100px;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
 }
 
 .card-img-top {
-  height: 250px;
+  height:400px;
 }
 
+<<<<<<< HEAD
 
 /*Footer */
 
@@ -82,3 +83,14 @@ footer {
   
 }
 
+=======
+.btn-primary.btn-lg {
+  font-size: 24px;
+  padding: 15px 30px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.card-top{
+  margin-top: 200px;
+}
+>>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2

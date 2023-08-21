@@ -131,7 +131,7 @@ mysqli_close($ObtenerConexion);
     </section>
 
     <!-- Footer -->
-  <footer class="pt-4 pt-md-4 border-top">
+    <footer class="pt-4 pt-md-4 border-top">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-3">
@@ -140,9 +140,9 @@ mysqli_close($ObtenerConexion);
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
             <ul class="list-unstyled text-small">
-              <li > <a class="text-muted" href="./Sede.Belen.html" style="color: white; font-size: 20px;">Belen</a></li>
-              <l><a class="text-muted" href="./Sede-Escazu.html"  style="color: white; font-size: 20px; ">Escazu</a></li>
-              <li><a class="text-muted" href="./Sede-SanPedro.html" style="color: white; font-size: 20px;">San Pedro</a></li>
+              <li > <a class="text-muted" href="../Sede.Belen.html"color: white; font-size: 20px;">Belen</a></li>
+              <l><a class="text-muted" href="../Sede-Escazu.html" style="color: white; font-size: 20px;">Escazu</a></li>
+              <li><a class="text-muted" href="../Sede-SanPedro.html" style="color: white; font-size: 20px;">San Pedro</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
@@ -153,17 +153,11 @@ mysqli_close($ObtenerConexion);
               <i class="bi bi-youtube">Youtube</i>
             </div>
           </div>
-          <div class="col-12 col-md-3">
-            <h5>About</h5>
-            <lu class="list-unstyled text-small">
-              <li><a class="text-muted" href="#" style="color: white; font-size: 20px;"">Te gustaria trabajar con nosotros</a></li>
-    
             </ul>
           </div>
         </div>
       </div>
     </footer>
-
     <!-- JavaScript -->
     <script src="js/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>

@@ -69,8 +69,8 @@ main{
     position: relative;
     display: inline-block;
     cursor: pointer;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   
   .profile-picture img {
@@ -79,8 +79,8 @@ main{
     object-fit: cover;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 100%;
     transform: translate(-50%, -50%);
   }
    
@@ -119,15 +119,3 @@ main{
     float: right;
     text-align: center;
   }
-
-  
-/*Footer */
-
-
-footer {
-  background-color:#45C4B0;
-  border: 1px solid black;
-
-  
-}
-

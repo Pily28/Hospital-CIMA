@@ -73,10 +73,12 @@
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a class="dropdown-item" href="database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
+
+                    <a class="dropdown-item" href="./database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Registros</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
+                    <a class="dropdown-item" href="./database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
+                    
                   </li>
                   <li>
                     <a class="dropdown-item" href="database/LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
@@ -137,9 +139,9 @@
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Citas de inmediato con nuestro personal</h5>
+
                   <button type="button" id="ver-citas-btn" class="btn btn-primary"><a  href="./database/Citas.PHP"></a>
-                    Citas en línea
-                  </button>
+                  Citas en Linea</button>
                 </div>
               </div>
               <div class="carousel-item">
@@ -151,9 +153,14 @@
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>La mejor atención médica privada</h5>
+
                   <button type="button" class="btn btn-primary"><a  href="./database/Citas.PHP"></a>
                     Cita en linea
-                  </button>
+
+                  <button type="button" id="ver-citas" class="btn btn-warning"><a  href="./database/LoginUsuarios.php">
+                    Citas en línea
+
+                  </a> </button>
                 </div>
               </div>
               <div class="carousel-item">
@@ -165,9 +172,10 @@
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Atención en minutos</h5>
-                  <button type="button" id="ver-citas-btn" class="btn btn-primary"><a  href="./database/Citas.PHP"></a>
-                    Citas en línea
-                  </button>
+                  <button type="button" id="ver-citas-btn" class="btn btn-primary"><a  href="./database/Citas.PHP">
+
+                    Citas en línea</a>
+                  </a></button>
                 </div>
               </div>
             </div>
@@ -252,32 +260,32 @@
           </div>
         </section></main>
     <!-- Footer -->
-    <footer class="pt-4 pt-md-4 border-top">
+    <footer class="pt-4 pt-md-5 border-top">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-3">
-            <img class="mb-2" src="./img/caduceo.png" alt="caduceo" />
+            <img class="mb-2" src="../img/health-and-care.png" alt="" />
           </div>
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
             <ul class="list-unstyled text-small">
-              <li > <a class="text-muted" href="./Sede.Belen.html" style="color: white; font-size: 20px;">Belen</a></li>
-              <l><a class="text-muted" href="./Sede-Escazu.html" style="color: white; font-size: 20px;">Escazu</a></li>
-              <li><a class="text-muted" href="./Sede-SanPedro.html" style="color: white; font-size: 20px;">San Pedro</a></li>
+              <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+              <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
             <h5>Redes Sociales</h5>
-            <div  class="text-small">
-              <i class="bi bi-instagram">Instagram</i>
-              <i class="bi bi-facebook">Facebook</i>
-              <i class="bi bi-youtube">Youtube</i>
-            </div>
+            <ul class="list-unstyled text-small">
+              <a class="text-muted" href="#"><img class="mb-2" src="./img/instagram.png" alt="instagram" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="./img/facebook.png" alt="facebook" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="./img/youtube.png" alt="youtube" /></a>
+            </ul>
           </div>
           <div class="col-12 col-md-3">
             <h5>About</h5>
-            <lu class="list-unstyled text-small">
-              <li><a class="text-muted" href="#" style="color: white; font-size: 20px;"">Te gustaria trabajar con nosotros</a></li>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
     
             </ul>
           </div>
@@ -288,6 +296,7 @@
     <script src="js/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/Index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
