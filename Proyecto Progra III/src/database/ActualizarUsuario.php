@@ -280,35 +280,38 @@ mysqli_close($ObtenerConexion);
 
 <!------Footer --------->
 
-<footer class="pt-4 pt-md-4 border-top">
+<footer class="pt-4 pt-md-5 border-top">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-3">
-            <img class="mb-2" src="../img/caduceo.png" alt="caduceo" />
+            <img class="mb-2" src="../img/health-and-care.png" alt="" />
           </div>
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
             <ul class="list-unstyled text-small">
-              <li > <a class="text-muted" href="../Sede.Belen.html"color: white; font-size: 20px;">Belen</a></li>
-              <l><a class="text-muted" href="../Sede-Escazu.html" style="color: white; font-size: 20px;">Escazu</a></li>
-              <li><a class="text-muted" href="../Sede-SanPedro.html" style="color: white; font-size: 20px;">San Pedro</a></li>
+              <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+              <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
             <h5>Redes Sociales</h5>
-            <div  class="text-small">
-              <i class="bi bi-instagram">Instagram</i>
-              <i class="bi bi-facebook">Facebook</i>
-              <i class="bi bi-youtube">Youtube</i>
-            </div>
+            <ul class="list-unstyled text-small">
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
+            </ul>
           </div>
+          <div class="col-12 col-md-3">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
+    
             </ul>
           </div>
         </div>
       </div>
     </footer>
-
-
 
   <!-- JavaScript -->
   <script src="js/modernizr-3.11.2.min.js"></script>

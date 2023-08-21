@@ -287,7 +287,7 @@ if (isset($_POST["Buscar"])) {
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-3">
-            <img class="mb-2" src="img/health-and-care.png" alt="" />
+            <img class="mb-2" src="../img/health-and-care.png" alt="" />
           </div>
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
@@ -300,9 +300,9 @@ if (isset($_POST["Buscar"])) {
           <div class="col-6 col-md-3">
             <h5>Redes Sociales</h5>
             <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Instagram</a></li>
-              <li><a class="text-muted" href="#">Facebook</a></li>
-              <li><a class="text-muted" href="#">Youtube</a></li>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
             </ul>
           </div>
           <div class="col-12 col-md-3">

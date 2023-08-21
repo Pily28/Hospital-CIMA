@@ -148,31 +148,27 @@
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
               <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
-              <li><a class="text-muted" href="../Sede-Escazu.html">San Pedro</a></li>
+              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
             <h5>Redes Sociales</h5>
             <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Instagram</a></li>
-              <li><a class="text-muted" href="#">Facebook</a></li>
-              <li><a class="text-muted" href="#">Twitter</a></li>
-              <li><a class="text-muted" href="#">Youtube</a></li>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
             </ul>
           </div>
           <div class="col-12 col-md-3">
             <h5>About</h5>
             <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Team</a></li>
-              <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="#">Privacy</a></li>
-              <li><a class="text-muted" href="#">Terms</a></li>
+              <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
+    
             </ul>
           </div>
         </div>
       </div>
     </footer>
-
     <!-- JavaScript -->
     <script src="js/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>

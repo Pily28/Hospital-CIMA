@@ -156,35 +156,36 @@ session_start();
     </main>
 
     <!-- Pie de pagina -->
-    <footer class="row pt-4 pt-5 border-top">
-      <div class="col-12 col-md">
-        <img class="mb-2" src="/css/img/health-and-care (4).png" alt="" />
-      </div>
-      <div class="col-6 col-md">
-        <h5>Ubicación</h5>
-        <ul class="menu list-unstyled text-small">
-            <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
-            <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
-            <li><a class="text-muted" href="../Sede-Escazu.html">San Pedro</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Redes Sociales</h5>
-        <ul class="menu list-unstyled text-small">
-          <li><a class="text-muted" href="#">Instagram</a></li>
-          <li><a class="text-muted" href="#">Facebook</a></li>
-          <li><a class="text-muted" href="#">Twitter</a></li>
-          <li><a class="text-muted" href="#">Youtube</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Acerca de</h5>
-        <ul class="menu list-unstyled text-small">
-          <li><a class="text-muted" href="#">Equipo</a></li>
-          <li><a class="text-muted" href="#">Ubicaciones</a></li>
-          <li><a class="text-muted" href="#">Privacidad</a></li>
-          <li><a class="text-muted" href="#">Términos</a></li>
-        </ul>
+    <footer class="pt-4 pt-md-5 border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <img class="mb-2" src="../img/health-and-care.png" alt="" />
+          </div>
+          <div class="col-6 col-md-3">
+            <h5>Localización</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+              <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5>Redes Sociales</h5>
+            <ul class="list-unstyled text-small">
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
+              <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
+            </ul>
+          </div>
+          <div class="col-12 col-md-3">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
+    
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
 

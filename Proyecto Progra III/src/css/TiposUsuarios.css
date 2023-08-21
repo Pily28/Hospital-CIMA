@@ -71,19 +71,16 @@ main{
   height:400px;
 }
 
-<<<<<<< HEAD
+
 
 /*Footer */
-
 
 footer {
   background-color:#45C4B0;
   border: 1px solid black;
 
-  
 }
 
-=======
 .btn-primary.btn-lg {
   font-size: 24px;
   padding: 15px 30px;
@@ -91,6 +88,6 @@ footer {
   margin-bottom: 25px;
 }
 .card-top{
-  margin-top: 200px;
+  margin-top: 200px
+
 }
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
