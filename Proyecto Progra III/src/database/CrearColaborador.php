@@ -49,60 +49,79 @@ if (isset($_POST["Volver"])) {
   <meta name="description" content="Hospital CIMA, Salud, Ambulacia privada" />
   <meta name="keywords" content="salud, citas, Citas en linea" />
   <!-- Favicon -->
-  <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
+  <link rel="shortcut icon" href="../img/logo.png" />
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/ActualizarUsuario.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 </head>
 
 <body>
-  <header class="fixed-fluid">
-    <!-- Sección pública -->
-    <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary ">
-      <div class="container">
-        <a class="navbar-brand" href="../index.html">CIMA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!---Menu Desktop-->
-        <header class="fixed-fluid">
-          <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
-            <div class="container">
-              <a class="navbar-brand" href="index.html">CIMA</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-center" id="navbar-content">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+<header class="fixed-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+        <a href="#" class="logo"><img src="../img/logo2.jpg"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-content"
+            aria-controls="navbar-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbar-content"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html"
+               style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Inicio</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;"  >
+                  Trámites
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Trámites
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li>
-                        <a class="dropdown-item" href="./Registro.php">Registros</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="./LoginColaboradores.php">Área Administrativa</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="./LoginUsuarios.php">Login Usuarios</a>
-                      </li>
-                    </ul>
+                  <li>
+                    <a class="dropdown-item" href="database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../contacto.html7">Contacto</a>
+                  <li>
+                    <a class="dropdown-item" href="database/LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
                   </li>
                 </ul>
-              </div>
-            </div>
-          </nav>
-        </header>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./contacto.html"
+                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
         <!-------Contenido de la pagina------------>
         <main class="my-4 container text-center">
@@ -210,42 +229,38 @@ if (isset($_POST["Volver"])) {
 
       <!-- Pie de pagina -->
       <!-- Footer -->
-      <footer class="pt-4 pt-md-5 border-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-3">
-              <img class="mb-2" src="img/health-and-care.png" alt="" />
-            </div>
-            <div class="col-6 col-md-3">
-              <h5>Localización</h5>
-              <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">San Ramón</a></li>
-                <li><a class="text-muted" href="#">San Carlos</a></li>
-                <li><a class="text-muted" href="#">Rohrmoser</a></li>
-                <li><a class="text-muted" href="#">Jacó</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-3">
-              <h5>Redes Sociales</h5>
-              <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Instagram</a></li>
-                <li><a class="text-muted" href="#">Facebook</a></li>
-                <li><a class="text-muted" href="#">Twitter</a></li>
-                <li><a class="text-muted" href="#">Youtube</a></li>
-              </ul>
-            </div>
-            <div class="col-12 col-md-3">
-              <h5>About</h5>
-              <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Team</a></li>
-                <li><a class="text-muted" href="#">Locations</a></li>
-                <li><a class="text-muted" href="#">Privacy</a></li>
-                <li><a class="text-muted" href="#">Terms</a></li>
-              </ul>
+      <footer class="pt-4 pt-md-4 border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <img class="mb-2" src="../img/caduceo.png" alt="caduceo" />
+          </div>
+          <div class="col-6 col-md-3">
+            <h5>Localización</h5>
+            <ul class="list-unstyled text-small">
+              <li > <a class="text-muted" href="./Sede.Belen.html" style="color: white; font-size: 20px;">Belen</a></li>
+              <l><a class="text-muted" href="./Sede-Escazu.html"  style="color: white; font-size: 20px; ">Escazu</a></li>
+              <li><a class="text-muted" href="./Sede-SanPedro.html" style="color: white; font-size: 20px;">San Pedro</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5>Redes Sociales</h5>
+            <div  class="text-small">
+              <i class="bi bi-instagram">Instagram</i>
+              <i class="bi bi-facebook">Facebook</i>
+              <i class="bi bi-youtube">Youtube</i>
             </div>
           </div>
+          <div class="col-12 col-md-3">
+            <h5>About</h5>
+            <lu class="list-unstyled text-small">
+              <li><a class="text-muted" href="#" style="color: white; font-size: 20px;"">Te gustaria trabajar con nosotros</a></li>
+    
+            </ul>
+          </div>
         </div>
-      </footer>
+      </div>
+    </footer>
 
 </body>
 

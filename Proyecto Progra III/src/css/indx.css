@@ -21,6 +21,9 @@
 
 body {
     background-color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -59,37 +62,46 @@ main{
 }
 
 
-/****Cambios sede Belen **/
-.card-sede-Belen {
-    display: flex;
-    justify-content:center;
-     height: 35rem;
-     margin: 70px;   
+.corusel-images {
+   
+    padding: 5px;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px white
+   
+}
+.card-text {
+    text-align: left;
 }
 
-.card-text  {
-     margin: 15px;
-}
-
-.card-img  {
-    width: 300px;
-    height: 545px;
-}
-
-.map {
+/*Servicio */
+.servicios-ci {
     margin: 50px;
 }
 
-.title-localizacion {
+
+h2 {
     text-align: center;
-   
+    font-family: 'Arimo','Roboto';
 }
 
-.map-localization {
-    padding: 40px;
-    width: 80rem;
-    height: 40rem;
+p{
+    text-align: center;
 }
+
+card {
+    margin: 2px;
+}
+
+.card:hover{
+    cursor: pointer;
+    transition: all 1;
+    transform: scale(1.1);
+    
+}
+
+
+
 
 
 /*Footer */

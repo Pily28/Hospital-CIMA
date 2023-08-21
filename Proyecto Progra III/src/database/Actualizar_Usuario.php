@@ -80,9 +80,12 @@ mysqli_close($ObtenerConexion);
 <html>
 <head>
     <title>Actualizar información</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/src/img/medical-symbol.png" />
-    <!-- Stylesheets -->
+  <!-- Favicon -->
+   <!-- Favicon -->
+   <link rel="shortcut icon" href="../img/logo.png" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/normalize.css" />
+  <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/ActualizarUsuario.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -93,73 +96,69 @@ mysqli_close($ObtenerConexion);
 <body>
 <!-----Cabeza ------>
 <header class="fixed-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="../index.html">CIMA</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar-content"
-          aria-controls="navbar-content"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbar-content"
-        >
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html"
-                >Inicio</a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle active"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Trámites
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a class="dropdown-item" href="./Registro.php">Registros</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./LoginColaboradores.php"
-                    >Área Administrativa</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./LoginUsuarios.php"
-                    >Login Usuarios</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="contacto.html"
-                >Contacto</a
-              >
-            </li>
-          </ul>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+        <a href="#" class="logo"><img src="../img/logo2.jpg"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-content"
+            aria-controls="navbar-content"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbar-content"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html"
+               style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Inicio</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;"  >
+                  Trámites
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="database/LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./contacto.html"
+                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
 <!------Contenido------>
 

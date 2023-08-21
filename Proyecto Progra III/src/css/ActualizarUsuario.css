@@ -1,8 +1,74 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,500;1,400;1,500&family=Karla:wght@300;400&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap');
+
+
+:root {
+    --color-primary: #026773;
+    --color-secondary: #6c757d;
+    --color-accent: #ffc107;
+    --color-background: whitesmoke;
+    --color-navbar: aquamarine;
+    --font-size-default: 16px;
+
+  }
+  
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+
+nav{
+    background-color:#e3f2fd;
+    height: 95px;
+    
+}
+
+
+.logo img {
+    width: 5rem;
+    margin: 5px;
+    padding: 5px;
+      background-color: white;
+   
+}
+
+
+
+.nav-link a{
+    color: black;
+}
+
+
+li:hover > a{
+    background-color: var(--color-navbar);
+    color: white;
+    cursor: pointer;
+    transform: 2seg;
+    border-radius: 2px;
+    
+}
+main{
+    background-color: whitesmoke
+
+}
+
+
+
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 h1 {
@@ -60,5 +126,16 @@ input[type="submit"]:hover {
 
 .back-button {
     margin-top: 20px;
+}
+
+
+/*Footer */
+
+
+footer {
+    background-color:#45C4B0;
+    border: 1px solid black;
+  
+    
 }
 

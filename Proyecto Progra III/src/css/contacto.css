@@ -21,6 +21,9 @@
 
 body {
     background-color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -53,48 +56,43 @@ li:hover > a{
     border-radius: 2px;
     
 }
-main{
-    background-color: whitesmoke
+
+
+
+body {
+    background-color: whitesmoke;
+
 
 }
 
+/*Contenido */
 
-/****Cambios sede Belen **/
-.card-sede-Belen {
+/*******Contacto*****/
+main {
     display: flex;
-    justify-content:center;
-     height: 35rem;
-     margin: 70px;   
+    justify-content: center;
+    background-color: whitesmoke;
+}
+.demo-container {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    margin: 20px;   
+
+
 }
 
-.card-text  {
-     margin: 15px;
-}
+section {
+    
+    background-color: whitesmoke;
+    width: 100%;
 
-.card-img  {
-    width: 300px;
-    height: 545px;
-}
-
-.map {
-    margin: 50px;
-}
-
-.title-localizacion {
-    text-align: center;
-   
-}
-
-.map-localization {
-    padding: 40px;
-    width: 80rem;
-    height: 40rem;
 }
 
 
-/*Footer */
 
 
+/*footer*/
 footer {
     background-color:#45C4B0;
     border: 1px solid black;
