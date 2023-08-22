@@ -114,7 +114,7 @@ section {
     cursor: pointer;
     transition: all 1;
     transform: scale(1.1);
- }
+  }
 
 .card {
     display: grid;
