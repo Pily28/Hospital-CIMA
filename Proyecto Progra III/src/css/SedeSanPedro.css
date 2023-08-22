@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,500;1,400;1,500&family=Karla:wght@300;400&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap');
+
+
+:root {
+    --color-primary: #026773;
+    --color-secondary: #6c757d;
+    --color-accent: #ffc107;
+    --color-background: whitesmoke;
+    --color-navbar: aquamarine;
+    --font-size-default: 16px;
+
+  }
+  
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e3f2fd;
+}
+
+
+/*Cabecera*************************/
+nav{
+    background-color:#e3f2fd;
+    height: 95px;
+    
+}
+
+
+.logo img {
+    width: 5rem;
+    margin: 5px;
+    padding: 5px;
+   
+}
+
+
+
+.nav-link a{
+    color: black;
+}
+
+
+li:hover > a{
+    background-color: var(--color-navbar);
+    color: white;
+    cursor: pointer;
+    transform: 2seg;
+    border-radius: 2px;
+    
+}
+
+/******Contenido *****/
+
+main{
+    background-color: whitesmoke
+
+}
+
+
+/*********Section Localizacion***************************************/
+/**********Sedes card******/
+.sede-card {
+   padding: 60px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+  
+
+
+}
+
+.card  {
+    border: 1px solid #6c757d;
+    background-color: #fff7e4;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
+}
+
+.main-title-card {
+    border: 1px solid black;
+    background-color: var(--color-secondary);
+    width: 630px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin-right: 100px;
+     padding: 10px;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.card-main{
+font-weight: 30px;
+font-size: 30px;
+font-family: Animo;
+text-align: center;
+color: white;
+
+
+}
+
+.text-direction {
+    text-align: center;
+
+} 
+
+/******Mapa******************/
+.panel {
+    padding: 10px;
+}
+
+
+
+.localizacion-map {
+    text-align: center;
+    font-weight: 10px;
+    font-family: Animo;
+    margin: 10px;
+    margin-left: 6px;
+}
+
+.text-location {
+    font-family:Animo;
+    text-align: center;
+}
+
+
+.map {
+    width: 1200px;
+}
+
+
+
+/*Footer***************************** */
+footer {
+    background-color:#45C4B0;
+    border: 1px solid black;
+  
+    
+}

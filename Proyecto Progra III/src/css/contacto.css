@@ -94,14 +94,6 @@ section {
 
 }
 
-.sedes-title {
-    text-align: center;
-    font-weight: 10px;
-    font-family: Animo;
-    margin: 10px;
-    margin-left: 6px;
-}
-
 .Card-Sede container {
     display: grid;
     grid-column: (1,3);
