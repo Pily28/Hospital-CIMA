@@ -25,11 +25,11 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-<header class="fixed-fluid">
+    <!-- Header -->
+    <header class="fixed-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-        <a href="#" class="logo"><img src="../img/logo2.jpg"></a>
+        <a href="Inicio.php" class="logo"><img src="../img/logo2.jpg"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -45,63 +45,10 @@
             class="collapse navbar-collapse justify-content-center"
             id="navbar-content"
           >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html"
-               style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;"  >
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./contacto.html"
-                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Contacto</a
-                >
-              </li>
-            </ul>
           </div>
         </div>
       </nav>
-
-  <header class="fixed-fluid">
-    <!---Menu Desktop-->
-      <header class="fixed-fluid">
-        <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
-         <div class="container">
-            <a class="navbar-brand" href="../index.html">CIMA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-        </nav>
-      </header>
+    </header>
 
       <?php
       include("ConexionBD.php");
@@ -143,7 +90,6 @@
         echo "<script> location.href='../InterfazColaborador.html'; </script>";
       }
       ?>
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
 
         <!-------Contenido de la pagina------------>
         <main class="my-4 container text-center">

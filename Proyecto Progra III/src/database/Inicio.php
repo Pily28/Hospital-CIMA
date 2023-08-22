@@ -28,7 +28,6 @@
 <?php
 session_start();
 ?>
-<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="es">
@@ -57,14 +56,12 @@ session_start();
     />
   </head>
   <body>
-=======
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
   
     <!-- Header -->
     <header class="fixed-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-        <a href="#" class="logo"><img src="../img/logo2.jpg"></a>
+        <a href="Inicio.php" class="logo"><img src="../img/logo2.jpg"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -80,49 +77,6 @@ session_start();
             class="collapse navbar-collapse justify-content-center"
             id="navbar-content"
           >
-<<<<<<< HEAD
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html"
-               style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;"  >
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./contacto.html"
-                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Contacto</a
-                >
-              </li>
-            </ul>
-=======
           </div>
           <div class="user-info">
             <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>
@@ -138,16 +92,14 @@ session_start();
                 </ul>
               </div>
             </div>
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
           </div>
         </div>
       </nav>
     </header>
 
     <!-- Content -->
-    <div class="container-fluid">
-      <main class="my-3">
-        <section>
+    <main  class="container-fluid">
+        <section class="corusel-images">
           <div
             id="carouselExampleCaptions"
             class="carousel slide"
@@ -185,9 +137,10 @@ session_start();
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Citas de inmediato con nuestro personal</h5>
-                  <button type="button" id="ver-citas-btn" class="btn btn-warning">
-                    Citas en línea
-                </button>
+
+                  <button type="button" id="ver-citas-btn" class="btn btn-primary"><a  href="Citas.PHP"></a>
+                    Citas en linea
+                  </a> </button>
                 </div>
               </div>
               <div class="carousel-item">
@@ -199,9 +152,11 @@ session_start();
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>La mejor atención médica privada</h5>
-                  <button type="button" class="btn btn-warning">
-                    Más información
-                  </button>
+
+                  <button type="button" id="ver-citas-btn" class="btn btn-primary"><a  href="Citas.PHP"></a>
+                    Citas en linea
+
+                  </a> </button>
                 </div>
               </div>
               <div class="carousel-item">
@@ -213,9 +168,10 @@ session_start();
                 />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Atención en minutos</h5>
-                  <button type="button" id="ver-citas-btn" class="btn btn-warning">
-                    Citas en línea
-                  </button>
+                  <button type="button" id="ver-citas-btn" class="btn btn-primary"><a  href="Citas.PHP"></a>
+                    Citas en linea
+
+                  </a> </button>
                 </div>
               </div>
             </div>
@@ -245,28 +201,60 @@ session_start();
             </button>
           </div>
         </section>
+      </div>
 
-        <section>
+<!---Servicios-->
+
+    <section class="servicios-ci">
           <div>
-            <h2>Servicios</h2>
+            <h2 class="servicios-title">Servicios</h2>
             <p>
               Aquí se presenta información sobre por qué el hospital debe ser
               elegido entre muchos otros.
             </p>
-          </div>
+            <div class="container-servicios d-flex justify-content-center">
+              <div class="card" style="width: 18rem; margin:10px;">
+                <img src="../img/doctor-6810750_640.png" class="card-img-top" alt="Medicina privada">
+                <div class="card-body">
+                  <h5 class="card-title">Medicina Adomicilio</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#"></a>
+                </div>
+              </div>
+               
+              <div class="card" style="width: 18rem; margin:10px;">
+                <img src="../img/ambulance-1674877_640.png" style="height: 12.7rem;" class="card-img-top" alt="Ambulancia privada">
+                <div class="card-body">
+                  <h5 class="card-title">Ambulacia Privada</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#"></a>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem; margin:10px;">
+                <img src="../img/doctor-5187731_640.png" class="card-img-top" alt="Meidcina">
+                <div class="card-body">
+                  <h5 class="card-title">Medicina Privada</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#"></a>
+                </div>
+              </div>
+            </div>
         </section>
 
-        <section>
+        <section class="card-elegirnos">
           <div>
-            <h2>Programa de Acción Social</h2>
-            <p>
-              Aquí se presenta información sobre por qué el hospital debe ser
-              elegido entre muchos otros.
-            </p>
+            <h2>Porque elegirnos?</h2>
+            <div class="d-flex justify-content-center">
+         <div class="card" style="width: 18rem; margin: 30px;">
+              <img src="../img/medical-symbol.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Somos unos de los mejores Hospitales privados con los mejores medicos a nivel nacional , para nosotros la salud es primodial</p>
+              </div>
+            </div>
+            </div>
           </div>
-        </section>
-      </main>
-    </div>
+        </section></main>
 
     <!-- Footer -->
     <footer class="pt-4 pt-md-5 border-top">
@@ -303,9 +291,10 @@ session_start();
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/modernizr-3.11.2.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/Index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

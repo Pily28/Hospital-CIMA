@@ -26,9 +26,9 @@
   <body>
     <!-- Header -->
     <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="../index.html">CIMA</a>
+        <a href="Inicio.php" class="logo"><img src="../img/logo2.jpg"></a>
           <button
             class="navbar-toggler"
             type="button"

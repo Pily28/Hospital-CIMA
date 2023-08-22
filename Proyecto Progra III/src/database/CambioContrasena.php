@@ -46,19 +46,6 @@
   
       return $contrasena;
   }
-  function enviar_correo($destinatario, $contrasena) {
-    $asunto = "Recuperación de Contraseña";
-    $mensaje = "Su nueva contraseña es: $contrasena";
-    $cabeceras = "From: tu_correo@ejemplo.com" . "\r\n" .
-                 "Reply-To: tu_correo@ejemplo.com" . "\r\n" .
-                 "X-Mailer: PHP/" . phpversion();
-
-    if (mail($destinatario, $asunto, $mensaje, $cabeceras)) {
-        echo "Se ha enviado un correo con la nueva contraseña.";
-    } else {
-        echo "Error al enviar el correo.";
-    }
-}
 
 
     if (isset($_POST["recuperar"])) {
@@ -69,10 +56,9 @@
       // Actualizar la contraseña en la base de datos y enviarla por correo
       $sql = "UPDATE usuarios SET Contraseña = '$nueva_contrasena' WHERE Correo = '$Correo'";
       if ($ObtenerConexion->query($sql) === TRUE) {
-          enviar_correo($Correo, $nueva_contrasena); // Implementa esta función según tus necesidades
-          echo "La contraseña se ha reiniciado y se ha enviado al correo proporcionado.";
+        echo "<script> alert ('La contraseña se ha reiniciado correctamente, su nueva contraseña es $nueva_contrasena'); location.href='CambioContrasena.php'; </script>";
       } else {
-          echo "Error al reiniciar la contraseña: ";
+        echo "<script> alert ('Error al reiniciar la contraseña'); location.href='CambioContrasena.php'; </script>";
       }
     }
 
@@ -80,10 +66,10 @@
     ?>
 
     <!-- Header -->
-    <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <header class="fixed-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="Inicio.php">CIMA</a>
+        <a href="Inicio.php" class="logo"><img src="../img/logo2.jpg"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -99,7 +85,6 @@
             class="collapse navbar-collapse justify-content-center"
             id="navbar-content"
           >
-           
           </div>
           <div class="user-info">
             <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>

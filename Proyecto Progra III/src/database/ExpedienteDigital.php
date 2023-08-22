@@ -32,11 +32,10 @@ session_start();
 ?>
 
 
-    <!-- Header -->
-    <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<header class="fixed-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="Inicio.php">CIMA</a>
+        <a href="Inicio.php" class="logo"><img src="../img/logo2.jpg"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -52,14 +51,6 @@ session_start();
             class="collapse navbar-collapse justify-content-center"
             id="navbar-content"
           >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Inicio.php"
-                  >Inicio</a
-                >
-              </li>
-            </ul>
-            
           </div>
           <div class="user-info">
             <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>
@@ -94,8 +85,6 @@ session_start();
 
     <main class="my-4 container text-center">
   
-      <a href="generar_pdf.php" target="_blank" class="btn btn-primary btn-lg float-end">Imprimir PDF</a>
-      <section class="row justify-content-center">
         <h2>Expediente Digital</h2>
         <div class="description">
           <p>Bienvenido, aquí podra ver su expediente de citas y comentarios realizados por sus doctores.</p>

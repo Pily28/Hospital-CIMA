@@ -10,21 +10,19 @@
       content="Hospital CIMA, Salud, Ambulacia privada"
     />
     <meta name="keywords" content="salud, citas, Citas en linea" />
-<<<<<<< HEAD
    <!-- Favicon -->
    <link rel="shortcut icon" href="../img/logo.png" />
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/normalize.css" />
   <link rel="stylesheet" href="../css/main.css" />
-=======
     <!-- Favicon -->
     <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     </head>
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/main.css" />
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
-  <link rel="stylesheet" href="../css/Login.css" />
+    <link rel="stylesheet" href="../css/Login.css" />
+    <link rel="stylesheet" href="../css/Registro.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -39,7 +37,6 @@
 
 <!--Cabecera----------->
 <header class="fixed-fluid">
-<<<<<<< HEAD
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
         <a href="#" class="logo"><img src="../img/logo2.jpg"></a>
@@ -60,7 +57,7 @@
           >
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html"
+                <a class="nav-link" aria-current="page" href="../index.html"
                style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Inicio</a
                 >
               </li>
@@ -80,13 +77,13 @@
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a class="dropdown-item" href="database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
+                    <a class="dropdown-item" href="Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
+                    <a class="dropdown-item" href="LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="database/LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
+                    <a class="dropdown-item" href="LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
                   </li>
                 </ul>
               </li>
@@ -94,74 +91,12 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="./contacto.html"
+                  href="../contacto.html"
                   style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Contacto</a
                 >
               </li>
             </ul>
           </div>
-=======
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="../index.html">CIMA</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar-content"
-          aria-controls="navbar-content"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbar-content"
-        >
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html"
-                >Inicio</a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle active"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Trámites
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a class="dropdown-item" href="./LoginColaboradores.php"
-                    >Área Administrativa</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./LoginUsuarios.php"
-                    >Login Usuarios</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="contacto.php"
-                >Contacto</a
-              >
-            </li>
-          </ul>
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
         </div>
       </nav>
     </header>

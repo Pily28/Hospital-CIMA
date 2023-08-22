@@ -20,7 +20,6 @@
 }
 
 body {
-<<<<<<< HEAD
     background-color: white;
 }
 
@@ -57,10 +56,6 @@ li:hover > a{
 main{
     background-color: whitesmoke
 
-=======
-  background-color: #f8f9fa;
-  width: 100%;
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
 }
 
 .container {

@@ -16,13 +16,14 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/normalize.css" />
   <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="css/LoginUsuarios.css" />
+    <link rel="stylesheet" href="../css/LoginUsuarios.css" />
     <!-- Favicon -->
     <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/Citas.css" />
+    <link rel="stylesheet" href="../css/Inicio.css" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -31,19 +32,16 @@
       crossorigin="anonymous"
     />
   </head>
+  <?php
+  session_start();
+  ?>
 
   <body>
-<<<<<<< HEAD
-<!---Cabecera------------------->
-<header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-
     <!-- Header -->
     <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="Inicio.php">CIMA</a>
+        <a href="Inicio.php" class="logo"><img src="../img/logo2.jpg"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -59,61 +57,21 @@
             class="collapse navbar-collapse justify-content-center"
             id="navbar-content"
           >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html"
-               style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Inicio</a>
-                <a class="nav-link active" aria-current="page" href="Inicio.php"
-                  >Inicio</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-
-                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;"  >
-
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-
-                    <a class="dropdown-item" href="database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
-                    <a class="dropdown-item" href="Registro.php">Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="LoginColaboradores.php">Área Administrativa</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="LoginUsuarios.php">Login Usuarios</a>
-                  </li>
+          </div>
+          <div class="user-info">
+            <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>
+            </div>
+              <div class="profile-picture">
+                <img src="<?php echo $_SESSION["imagen"]; ?>" alt="Imagen de perfil" id="profile-img">
+                <ul class="options-list" id="options-list">
+                  <li><a class="dropdown-item" href="ActualizarUsuario.php">Actualizar Información de usuario</a></li>
+                  <li><a class="dropdown-item" href="CambioContrasena.php">Cambiar Contraseña</a></li>
+                  <li><a class="dropdown-item" href="ExpedienteDigital.php">Expediente Digital</a></li>
+                  <li><a class="dropdown-item" href="CerrarSesion.php">Cerrar Sesion</a>
+                </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="../contacto.html"
-
-                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Contacto</a
-                  >Contacto</a
-
-                >
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
