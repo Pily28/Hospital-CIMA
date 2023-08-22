@@ -120,7 +120,7 @@
       </nav>
     </header>
 
-
+   <main>
     <div class="container">
         <h1>Realice el cambio de su contraseña</h1>
         <div class="description">
@@ -135,7 +135,7 @@
           </div>
         </form>
     </div>
-
+    </main>
     <!-- Footer -->
     <footer class="pt-4 pt-md-5 border-top" style="background-color: #45C4B0;">
     <div class="container">
