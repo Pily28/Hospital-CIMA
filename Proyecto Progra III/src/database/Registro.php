@@ -132,7 +132,6 @@ if (isset($_POST["Volver"])) {
 }
 ?>
 
-<<<<<<< HEAD
 
 
 <!DOCTYPE html>
@@ -229,8 +228,7 @@ if (isset($_POST["Volver"])) {
         </div>
       </nav>
     </header>
-=======
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
+
   <!--Contenido------>
   <main class="my-4 container text-center">
     <section class="row justify-content-center">
@@ -460,7 +458,7 @@ if (isset($_POST["Volver"])) {
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-3">
-            <img class="mb-2" src="../img/health-and-care.png" alt="" />
+            <img class="mb-2" src="../img/caduceo.png" alt="" />
           </div>
           <div class="col-6 col-md-3">
             <h5>Localización</h5>
