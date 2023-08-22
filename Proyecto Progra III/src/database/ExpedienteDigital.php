@@ -25,7 +25,7 @@
     />
   </head>
 
-  <body>
+  <body style="background-color: whitesmoke;">
 
 <?php
 session_start();
@@ -34,51 +34,49 @@ session_start();
 
     <!-- Header -->
     <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-          <a class="navbar-brand" href="Inicio.php">CIMA</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar-content"
-            aria-controls="navbar-content"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbar-content"
-          >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Inicio.php"
-                  >Inicio</a
-                >
-              </li>
-            </ul>
-            
-          </div>
-          <div class="user-info">
-            <p>Usuario: <?php echo $_SESSION["Identificacion"]; ?></p>
-            </div>
-              <div class="profile-picture">
-                <img src="<?php echo $_SESSION["imagen"]; ?>" alt="Imagen de perfil" id="profile-img">
-                <ul class="options-list" id="options-list">
-                  <li><a class="dropdown-item" href="ActualizarUsuario.php">Actualizar Información de usuario</a></li>
-                  <li><a class="dropdown-item" href="CambioContrasena.php">Cambiar Contraseña</a></li>
-                  <li><a class="dropdown-item" href="ExpedienteDigital.php">Expediente Digital</a></li>
-                  <li><a class="dropdown-item" href="CerrarSesion.php">Cerrar Sesion</a>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#e3f2fd">
+      <div class="container">
+        <a href="#" class="logo"><img src="../img/logo2.jpg" style=" width:5rem; margin: 5px; padding: 5px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbar-content">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+
+              <a class="nav-link" aria-current="page" href="../index.html" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >
+                Trámites
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="database/Registro.php" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Registros</a>
                 </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+                <li>
+                  <a class="dropdown-item" href="database/LoginColaboradores.php" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Área Administrativa</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="database/LoginUsuarios.php" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Login Usuarios</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../contacto.html"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Contacto</a>
+      
+
+            </li>
+            <li class="nav-item">
+             
+              <a class="nav-link active" aria-current="page" href="../index.html"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Salir</a>
+
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
     <?php
     include("ConexionBD.php");
@@ -156,38 +154,39 @@ session_start();
     </main>
 
     <!-- Pie de pagina -->
-    <footer class="pt-4 pt-md-5 border-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-3">
-            <img class="mb-2" src="../img/health-and-care.png" alt="" />
-          </div>
-          <div class="col-6 col-md-3">
-            <h5>Localización</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
-              <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
-              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3">
-            <h5>Redes Sociales</h5>
-            <ul class="list-unstyled text-small">
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
-            </ul>
-          </div>
-          <div class="col-12 col-md-3">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
-    
-            </ul>
-          </div>
+    <footer class="pt-4 pt-md-5 border-top" style="background-color: #45C4B0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <img class="mb-2" src="../img/caduceo.png" />
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Localización</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+            <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+            <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Redes Sociales</h5>
+          <ul class="list-unstyled text-small">
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
+
+          </ul>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
+
 
     <!-- Scripts -->
     <script

@@ -11,18 +11,16 @@
     />
     <meta name="keywords" content="salud, citas, Citas en linea" />
     <!-- Favicon -->
-<<<<<<< HEAD
   <!-- Favicon -->
   <link rel="shortcut icon" href="../img/logo.png" />
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/normalize.css" />
   <link rel="stylesheet" href="../css/main.css" />
-=======
+
     <link rel="shortcut icon" href="../img/medical-symbol.png" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/main.css" />
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
     <link rel="stylesheet" href="../css/Login.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -32,136 +30,53 @@
 
     />
   </head>
-  <body>
+  <body  style="background-color: whitesmoke;">
 
   <!--------Cabeza de la pagina------>
   <header class="fixed-fluid">
-<<<<<<< HEAD
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-        <a href="#" class="logo"><img src="../img/logo2.jpg"></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar-content"
-            aria-controls="navbar-content"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbar-content"
-          >
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html"
-               style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Inicio</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle active"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;"  >
-                  Trámites
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="database/Registro.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Registros</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginColaboradores.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Área Administrativa</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="database/LoginUsuarios.php"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Login Usuarios</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./contacto.html"
-                  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >Contacto</a
-                >
-              </li>
-            </ul>
-          </div>
-=======
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#e3f2fd">
       <div class="container">
-        <a class="navbar-brand" href="../index.html">CIMA</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar-content"
-          aria-controls="navbar-content"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <a href="#" class="logo"><img src="../img/logo2.jpg" style=" width:5rem; margin: 5px; padding: 5px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbar-content"
-        >
-          <ul class="navbar-nav mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse justify-content-center" id="navbar-content">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html"
-                >Inicio</a
-              >
+
+              <a class="nav-link" aria-current="page" href="../index.html" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Inicio</a>
             </li>
             <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle active"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;" >
                 Trámites
               </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li>
-                  <a class="dropdown-item" href="LoginColaboradores.php"
-                    >Área Administrativa</a
-                  >
+                  <a class="dropdown-item" href="database/Registro.php" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Registros</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="LoginUsuarios.php"
-                    >Login Usuarios</a
-                  >
+                  <a class="dropdown-item" href="database/LoginColaboradores.php" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Área Administrativa</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="database/LoginUsuarios.php" style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Login Usuarios</a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="contacto.php"
-                >Contacto</a
-              >
+              <a class="nav-link active" aria-current="page" href="../contacto.html"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Contacto</a>
+      
+
+            </li>
+            <li class="nav-item">
+             
+              <a class="nav-link active" aria-current="page" href="../index.html"  style="color: lightseagreen; font-size: 15px; font-family: 'Trebuchet MS',sans-serif;">Salir</a>
+
             </li>
           </ul>
->>>>>>> 89df3e9918ed82b02edf525eebcf92ca583a7cc2
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
 <?php
 session_start();// Iniciar la sesión antes de usar las variables de sesión
@@ -251,38 +166,39 @@ if (isset($_POST["IniciarSesion"])) {
   </main>
 
    <!---Pie de la pagina--->
-   <footer class="pt-4 pt-md-5 border-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-3">
-            <img class="mb-2" src="../img/health-and-care.png" alt="" />
-          </div>
-          <div class="col-6 col-md-3">
-            <h5>Localización</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
-              <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
-              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3">
-            <h5>Redes Sociales</h5>
-            <ul class="list-unstyled text-small">
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
-            </ul>
-          </div>
-          <div class="col-12 col-md-3">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
-    
-            </ul>
-          </div>
+   <footer class="pt-4 pt-md-5 border-top" style="background-color: #45C4B0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <img class="mb-2" src="../img/caduceo.png" />
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Localización</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+            <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+            <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Redes Sociales</h5>
+          <ul class="list-unstyled text-small">
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
+
+          </ul>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
+
 
     <!-- JavaScript -->
     <script src="js/modernizr-3.11.2.min.js"></script>

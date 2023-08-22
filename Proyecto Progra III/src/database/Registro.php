@@ -27,10 +27,10 @@
   </head>
 
 
-<body>
+<body style="background-color: whitesmoke;">
   <!-----Cabecera ----------->
   <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#e3f2fd">
         <div class="container">
           <a class="navbar-brand" href="../index.html">CIMA</a>
           <button

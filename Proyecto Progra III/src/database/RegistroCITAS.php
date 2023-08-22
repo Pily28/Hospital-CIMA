@@ -28,12 +28,10 @@
 
   </head>
  
-  <body>
-
-
+  <body style="background-color: whitesmoke;">
     <!--Cabece de la pagina-->
     <header class="fixed-fluid">
-      <nav class="navbar navbar-expand-lg pt-4 navbar-dark bg-primary">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#e3f2fd">
         <div class="container">
           <a class="navbar-brand" href="../index.php">CIMA</a>
           <button
@@ -283,38 +281,38 @@ if (isset($_POST["Buscar"])) {
   </main>
 
     <!--Pie de pagina-->
-    <footer class="pt-4 pt-md-5 border-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-3">
-            <img class="mb-2" src="../img/health-and-care.png" alt="" />
-          </div>
-          <div class="col-6 col-md-3">
-            <h5>Localización</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
-              <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
-              <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3">
-            <h5>Redes Sociales</h5>
-            <ul class="list-unstyled text-small">
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
-              <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
-            </ul>
-          </div>
-          <div class="col-12 col-md-3">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
-    
-            </ul>
-          </div>
+    <footer class="pt-4 pt-md-5 border-top" style="background-color: #45C4B0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <img class="mb-2" src="../img/caduceo.png" />
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Localización</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="../Sede.Belen.html">Belen</a></li>
+            <li><a class="text-muted" href="../Sede-Escazu.html">Escazu</a></li>
+            <li><a class="text-muted" href="../Sede-SanPedro.html">San Pedro</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Redes Sociales</h5>
+          <ul class="list-unstyled text-small">
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/instagram.png" alt="instagram" /></a>
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/facebook.png" alt="facebook" /></a>
+            <a class="text-muted" href="#"><img class="mb-2" src="../img/youtube.png" alt="youtube" /></a>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Te gustaria trabajar con nosotros</a></li>
+
+          </ul>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
     <!-- JavaScript -->
     <script src="../js/modernizr-3.11.2.min.js"></script>
